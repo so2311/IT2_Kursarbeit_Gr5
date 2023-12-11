@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortschrittsbalken Beispiel</title>
     <style>
         #progress-bar {
             width: 300px;
@@ -14,36 +13,26 @@
 
         #progress {
             height: 100%;
+            background-color: #4caf50;
             width: 0;
-            background-color: #4CAF50;
+            position: absolute;
+        }
+
+        #progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
         }
     </style>
 </head>
 <body>
-
-<div id="progress-bar">
-    <div id="progress"></div>
-</div>
-
-<button onclick="startProgress()">Speichern</button>
-
-<script>
-    function startProgress() {
-        var progressBar = document.getElementById('progress');
-        var width = 0;
-
-        function updateProgress() {
-            if (width >= 100) {
-                clearInterval(interval);
-            } else {
-                width += 10;
-                progressBar.style.width = width + '%';
-            }
-        }
-
-        var interval = setInterval(updateProgress, 500);
-    }
-</script>
-
+    <div id="progress-bar">
+        <div id="progress"></div>
+        <div id="progress-text">0%</div>
+    </div>
+    <script src="update_progress.php"></script>
 </body>
 </html>
+
