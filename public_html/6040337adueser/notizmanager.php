@@ -29,6 +29,17 @@
         </select>
 
         <br>
+		 <!-- Kategorie kann ausgewählt werden -->
+        <label for="category">Kategorie:</label>
+        <select id="category" onchange="updateCourses()" disabled>
+            <option value="" selected disabled>Bitte wählen</option>
+            <option value="gestaltung">Gestaltung</option>
+            <option value="technik">Technik</option>
+            <option value="journalismus">Journalismus</option>
+            <option value="wirtschaft">Wirtschaft</option> 
+        </select>
+
+        <br>
 	
 </body>
 	<script src="notizmanager.js"></script>
