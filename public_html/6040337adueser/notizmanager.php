@@ -40,6 +40,13 @@
         </select>
 
         <br>
+
+        <!-- Kurse werden dynamisch mit JavaScript hinzugefügt -->
+        <label for="course">Kurs:</label>
+        <select id="course" onchange="updateCourses()" disabled>
+            <option value="" selected disabled>Bitte wählen</option>
+        </select>
+        <br>
 	
 </body>
 	<script src="notizmanager.js"></script>
