@@ -13,7 +13,7 @@
 	<h1> Notizenmanager </h1>
 	<p>Mit diesem Notizmanager behältst du den Überblick über alle deine Module und deine Lernaktivitäten:</p>
 	<p>
-		<!-- Semester kann ausgewählt werden -->
+<!-- Semester kann ausgewählt werden -->
 <!-- 4. Semester entfällt, da es sich um das Praxissemester handelt -->
 <div class="form-container">
     <div class="left-column">
@@ -29,7 +29,8 @@
         </select>
 
         <br>
-		 <!-- Kategorie kann ausgewählt werden -->
+
+        <!-- Kategorie kann ausgewählt werden -->
         <label for="category">Kategorie:</label>
         <select id="category" onchange="updateCourses()" disabled>
             <option value="" selected disabled>Bitte wählen</option>
@@ -47,7 +48,12 @@
             <option value="" selected disabled>Bitte wählen</option>
         </select>
         <br>
-	
+		
+	<button id="nextButton" onclick="showNotes()" disabled>Weiter</button>
+        <button class="button" onclick="resetForm()">Zurücksetzen</button>
+    </div>
+		
+		
 </body>
 	<script src="notizmanager.js"></script>
 	<html>
