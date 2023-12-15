@@ -12,7 +12,6 @@
 	
 	<h1> Notizenmanager </h1>
 	<p>Mit diesem Notizmanager behältst du den Überblick über alle deine Module und deine Lernaktivitäten:</p>
-	<p>
 <!-- Semester kann ausgewählt werden -->
 <!-- 4. Semester entfällt, da es sich um das Praxissemester handelt -->
 <div class="form-container">
@@ -53,7 +52,8 @@
         <button class="button" onclick="resetForm()">Zurücksetzen</button>
     </div>
 	
-		 <div class="right-column" id="notes-container" style="display: none;">
+		 <div id="notes-container">
+			 <!-- class und style einfügen -->
         <label for="notes">Notizen:</label>
         <textarea id="notes"></textarea>
         <button class="button" onclick="saveNotes()">Notizen speichern</button>
@@ -61,6 +61,5 @@
 </div>
 		
 </body>
-	<script src="notizmanager.js"></script>
-	<html>
+<script src="notizmanager.js"></script>
 </html>
