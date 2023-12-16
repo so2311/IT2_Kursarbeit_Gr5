@@ -1,0 +1,114 @@
+/* CSS Document */
+
+.grid {
+	display: grid;
+	grid-template-rows: 150px auto auto 150px;
+	grid-template-columns: 20% 20% 20% 20%;
+}
+.header{
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	background: #F8CBCB;
+	padding: 2px;
+	text-align:center;
+}
+
+.footer{
+	grid-column-start: 1;
+	grid-column-end: 6;
+	grid-row-start: 4;
+	grid-row-end: 5;
+	background: #F8CBCB;
+	padding: 2px;
+	text-align:center;
+}
+
+.nav{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	background: #F8CBF4;
+	padding: 2px;
+	text-align:center;
+}
+.main{
+	grid-column-start: 2;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	background: #DFD9DF;
+	padding: 2px;
+	text-align:left;
+}
+aside{
+	grid-column-start: 5;
+	grid-column-end: 6;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	background: #D9DFDC;
+	padding: 2px;
+	text-align:center;
+}
+
+#x,#y,#aufgabendesign {
+		
+		font-size: 100px;
+		
+}
+#eingetrErgebnis{
+	font-size: 100px;
+	
+	width: 120px;
+}
+
+/* 
+Definition einer Animation. Sie verwendet keine Selektoren, sondern Zeitangaben
+*/
+@keyframes blink {
+	/* ocacity legt die Deckkraft des Elements fest */
+   0% { opacity: 1; } 
+  50% { opacity: 0; }
+ 100% { opacity: 1; } 
+
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+}
+
+.falschesErgebnis{
+	
+	animation: blink 3s  ;
+	animation-delay: 0.5s;
+	animation-duration: 3s;
+	font-size: 40px;
+	color: #FF262A
+}
+.richtigesErgebnis{
+	animation: blink 3s  ;
+	animation-delay: 0.5s;
+	animation-duration: 3s;
+	font-size: 40px;
+	color: #03E843
+}
+
+#anzeige{
+	text-align: center;
+	background: #D3D3D4;
+	border: 20px solid #FF5E5E;
+	border-radius: 15px;
+	
+}
+
+.canvas-area{
+	border: 1px solid black;
+	
+}
+
+h1 { color: #FF5E5E;}
+h2 { color: #E86590;}
+h3 { color: #37AD64;}
+
