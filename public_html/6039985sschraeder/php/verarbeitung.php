@@ -21,6 +21,7 @@ $sql = "INSERT INTO Note (note) VALUES ('$selectedNote')";
 $sql = "INSERT INTO Kategorie (kategorie) VALUES ('$selectedKategorie')";
 $sql = "INSERT INTO Modul (modul) VALUES ($selectedModul')";
 	
+	
 // Verbindung zur Datenbank schließen
 $conn->close();
 ?>

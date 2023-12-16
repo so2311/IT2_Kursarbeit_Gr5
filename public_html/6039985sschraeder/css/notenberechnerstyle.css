@@ -1,26 +1,50 @@
 @charset "utf-8";
 /* CSS Document */
 
-
 /* Gridlayout */
-.container{display:grid;
-grid-template-areas:"header header header""nav content side""footer footer footer";
-grid-template-columns:200px 1fr 200px;
-grid-template-rows:auto 1fr auto;
+.container{
+	display:grid;
+    grid-template-columns:16rem 1 fr 16rem;
+    grid-template-rows:auto 1 fr auto;
+	grid-template-areas:
+		"header header header"
+		"nav main side"
+		"footer footer footer";
 grid-gap:10px;
-height:100vh;}
+min-height:100vh;}
 
-header{grid-area:header;}
-nav{grid-area:nav;margin-left:0.5rem;}
-main{grid-area:content;}
-aside{grid-area:side;margin-right:0.5rem;}
-footer{grid-area:footer;}
+header{
+	grid-area:header;
+	padding: 2rem;
+	background-color: lightcoral;}
 
+nav{
+	grid-area:nav;
+    padding: 2rem;
+    background-color: lightcoral;}
+
+
+main {
+	grid-area:main;
+	padding: 2rem;
+    background-color: lightgrey;}
+
+
+side{
+	grid-area:side;
+	padding: 2rem;
+    background-color: lightslategray;}
+
+footer{
+	grid-area:footer;
+    padding: 2rem;
+    background-color: lightcyan;}
+       
 
 
 /* Überschrift */
 h1 {
-  color: #E30613;
+  color: black;
   text-align: center;
 }
 
@@ -51,13 +75,4 @@ p {
   display: block;
 }
 
-<div class="dropdown">
-  <span>Mouse over me</span>
-  <div class="dropdown-content">
-  </div>
-</div>
 
-
-</style>
-</head>
-<body>
