@@ -4,11 +4,12 @@
 /* Gridlayout */
 .container{
 	display:grid;
-    grid-template-columns:16rem 1 fr 16rem;
-    grid-template-rows:auto 1 fr auto;
+    grid-template-columns:16rem 1fr 16rem;
+    grid-template-rows:auto 1fr auto;
 	grid-template-areas:
 		"header header header"
-		"nav main side"
+		"nav nav nav"
+		"main side"
 		"footer footer footer";
 grid-gap:10px;
 min-height:100vh;}
@@ -48,31 +49,17 @@ h1 {
   text-align: center;
 }
 
+h2
+{
+  color: darkred;
+  text-align: left;
+}
+
 /* Text */
 p {
   font-family: verdana;
   font-size: 20px;
 }
 
-
-
-/* Dropdown Menüs*/
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 

@@ -35,7 +35,7 @@
 	
 	<h1>Notenberechner</h1>
 	
-	</header>
+</header>
 	
 <nav>
 	Navigation
@@ -159,9 +159,6 @@ if ($resultKategorie && $resultModul && $resultNote) {
 } else {
     die("Fehler bei der Abfrage der Datenbank: " . mysqli_error($conn));
 }
-
-// Schließe die Datenbankverbindung
-mysqli_close($conn);
 ?>
 		
 
@@ -170,7 +167,7 @@ mysqli_close($conn);
 <p> Klicke auf "Ergebnisse", um deine Noten in einer Übersicht zu sehen. Du siehst dort außerdem in einer Statistik, wie oft du welche Note bekommen hast. </p>
 		
 		 <!---Bootstrap Button Ergebnisse der zu den Auswertungen führt--->
-<p><a href="auswertungen.php" class="btn btn-danger">Ergebnisse</a></p>
+<p><a href="ergebnisse.php" class="btn btn-danger">Ergebnisse</a></p>
 
 	</main>
 	
@@ -182,11 +179,6 @@ mysqli_close($conn);
 	
 	</side>
 	
-	<footer>
-	
-	<p>Jade Hochschule, Internettechnologie 2</p>
-		
-	</footer>
 	
 	</div>
 </body>

@@ -16,6 +16,6 @@
 	  <a href="notizmanager.php" >Hier geht's zum Notizenmanager</a>
 	  <br>
 	  <br>
-	  
+	  <a href="ergebnisse.php" >Übersicht aller Ergebnisse</a>
   </body>
 </html>
