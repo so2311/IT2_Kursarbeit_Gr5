@@ -13,9 +13,25 @@
 	<script src="notenberechnerjavascript.js"></script>
 	
 	<!-- db.connect.php include datei verlinkung-->
-	<?php
+	<MM:BeginLock translatorClass="MM_SSI" type="ssi" orig="%3C?php
 	include 'dbconnect.php'
+	?%3E" fileRef="dbconnect.php" depFiles="file:///C|/Users/selin/OneDrive/Dokumente/Studium Jade Hs/Semester 7/IT2/IT2_Kursarbeit_Gr5/public_html/6039985sschraeder/php/dbconnect.php"><!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dbconnect</title>
+</head>
+
+<body>
+		<?php
+	// Verbindung zur MySQL-Datenbank herstellen
+    //mysqli_connect ("DB-Server (Domainname)", "Benutzername (Login)", "Kennwort", "Datenbank")
+    $con= mysqli_connect("m12242-39.kurs.jade-hs.de", "m12242-39", "5zvHLEaO_", "m12242-39_2");
+	
+	
 	?>
+</body>
+</html><MM:EndLock>
 	
 	<!-- Bootstrap Einbindung -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -26,30 +42,14 @@
 	<!-- responsive Design mit bootstrap -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-	
-
-
-<div class="container">
-	
-<header>
-	
-	<h1>Notenberechner</h1>
-	
-</header>
-	
-<nav>
-	Navigation
-	
-	</nav>
-
-	<main>
-	
 
 <body>
-	
-	<p>Hier kannst du alle deine Noten am Ende des Semesters eintragen, um deinen derzeitigen Notendurchschnitt zu berechnen. Wähle dafür einfach die passende Kategorie, das jeweilige Modul und deine Note in den Dropdownmenüs aus und klicke auf "Ausrechnen". </p>
-	<br>
+	<div class="container">
 		
+<h1>Notenberechner</h1>
+	
+	<p>Hier kannst du alle deine Noten am Ende des Semesters eintragen, um deinen derzeitigen Notendurchschnitt zu berechnen:</p>
+	<p>
   <label for="kategorie">Kategorie:</label>
 	  <select name="kategorie" required>
 	    <option value="kategorie1">Gestaltung</option>
@@ -114,72 +114,45 @@
 	    <option value="5.0">5,0</option>
 	    </select>
 	  <br>
-	  <br>
+	  
 	  <!---Bootstrap Button Ausrechnen--->
-<button type="submit" name="ausrechnen"class="btn btn-danger">Ausrechnen</button>
-	
-	
-<!---Code ausführen, wenn Formular abgeschickt wurde--->
+<button type="submit" class="btn btn-danger">Ausrechnen</button>
+<p>&nbsp;</p>
+		 <!---Bootstrap Button Ergebnisse der zu den Auswertungen führt--->
+<p><a href="auswertungen.php" class="btn btn-danger">Ergebnisse</a></p>
+
+		
+		
 		<?php
-	if(isset($_POST["ausrechnen"]))
 		
-    //Berechnung
-		  $note = [hier irgendwie einzelnen Noten rein kriegen];
-
-   $average =  array_sum($numbers)/count($numbers);
-   print_r($average);
-		{
-						echo $average;
-					}
+// Daten aus dem Formular holen
+$kategorie = $_POST["kategorie"];
+$modul = $_POST["modul"];
+$note = $_POST["note"];
+		
+		
+// SQL-INSERT-Befehl ausführen
+$sql = "INSERT INTO Kategorie (kategorie) VALUES ('$kategorie')";
+$sql = "INSERT INTO Modul (modul) VALUES ('$modul')";
+$sql = "INSERT INTO Note (note) VALUES ('$note')";
 	
 	
-		?>
-		
-		
-<?php
-		
-// Daten aus der Datenbank abrufen
-$sqlKategorie = "SELECT kategorie FROM Noten";
-$sqlModul = "SELECT modul FROM Noten";
-$sqlNote = "SELECT note FROM Noten";
+// Daten aus der Datenbank abrufen (ersetze dies mit echtem SQL-Code)
+$sql = "SELECT modul FROM Kategorie;
+$sql = "SELECT modul FROM Modul;
+$sql = "SELECT note FROM Note";
 
-$resultKategorie = mysqli_query($conn, $sqlKategorie);
-$resultModul = mysqli_query($conn, $sqlModul);
-$resultNote = mysqli_query($conn, $sqlNote);
-
-// Schleife, um die eingetragenen Daten anzuzeigen
-if ($resultKategorie && $resultModul && $resultNote) {
+// Schleife, um die Daten anzuzeigen
+if ($result->num_rows > 0) {
     echo "<p>Bisherige Noten:</p><ul>";
-    while ($rowKategorie = mysqli_fetch_assoc($resultKategorie)) {
-        $rowModul = mysqli_fetch_assoc($resultModul);
-        $rowNote = mysqli_fetch_assoc($resultNote);
-        echo "<li>Kategorie: " . $rowKategorie["kategorie"] . ", Modul: " . $rowModul["modul"] . ", Note: " . $rowNote["note"] . "</li>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<li>Kategorie: " . $row["kategorie"] . ", Modul: " . $row["modul"] . ", Note: " . $row["note"] . "</li>";
     }
     echo "</ul>";
 } else {
-    die("Fehler bei der Abfrage der Datenbank: " . mysqli_error($conn));
-}
+    echo "Keine bisherigen Noten vorhanden.";
+
 ?>
-		
-
-		<br>
-		<br>
-<p> Klicke auf "Ergebnisse", um deine Noten in einer Übersicht zu sehen. Du siehst dort außerdem in einer Statistik, wie oft du welche Note bekommen hast. </p>
-		
-		 <!---Bootstrap Button Ergebnisse der zu den Auswertungen führt--->
-<p><a href="ergebnisse.php" class="btn btn-danger">Ergebnisse</a></p>
-
-	</main>
 	
-	
-	
-	<side>
-	
-	<p>Ausgabe Noten</p>
-	
-	</side>
-	
-	
-	</div>
 </body>
 </html>

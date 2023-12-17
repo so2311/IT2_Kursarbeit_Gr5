@@ -2,14 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Internettechnologie 2</title>
+    <title>Startseite</title>
   </head>
   <body>
-    <h1>Herzlich Willkommen im WS 2024</h1>
+    <h1>Der Studierendenhelfer</h1>
 	  
-	  <a href="seilers/" >Hier geht's zu Sophie</a>
-	  <a href="sschraeder/" >Hier geht's zu Selina</a>
-	  <a href="adueser/" >Hier geht's zu Allegra</a>
-	  
+	  <a href="notenberechner.php" >Hier geht's zum Notenberechner</a>
+	  <br>
+	  <br>
+	  <a href="checkliste.php" >Hier geht's zu deinen Checklisten</a>
+	  <br>
+	  <br>
+	  <a href="notizmanager.php" >Hier geht's zum Notizenmanager</a>
+	  <br>
+	  <br>
+	  <a href="ergebnisse.php" >Übersicht aller Ergebnisse</a>
   </body>
 </html>
