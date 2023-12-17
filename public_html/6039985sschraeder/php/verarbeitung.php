@@ -1,20 +1,25 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>verarbeitung.php</title>
-</head>
+<?php
 
-<body>
+// Verbindung zur MySQL-Datenbank herstellen
+//mysqli_connect ("DB-Server (Domainname)", "Benutzername (Login)", "Kennwort", "Datenbank")
+
+$con= mysqli_connect("m12242-39.kurs.jade-hs.de", "m12242-39", "5zvHLEaO_", "m12242-39_2");
+if ($conn->connect_error) {
+	die('Connection failed: '.$conn->connect_error);
 	
-	<?php
-// Verbindung zur Datenbank herstellen
-include 'dbconnect.php'
+} else {
+	$stmt=$conn->prepare("insert into notenberechner(kategorie, modul, note) values(?, ?, ?)");
+	$stmt->bind_param("sss", $kategorie, $modul, $note);
+	$stmt->execute();
+	echo "Noteneingabe war erfolgreich";
+	$stmt->close();
+}
+	
+//Daten aus dem Formular senden
+$kategorie=$_POST['kategorie'];
+$modul=$_POST['modul'];
+$note=$_POST['note'];
 
-// Daten aus dem Formular holen
-$selectedKategorie = $_POST["kategorie"];
-$selectedModul = $_POST["modul"];
-$selectedNote = $_POST["note"];
 
 // SQL-INSERT-Befehl ausführen
 $sql = "INSERT INTO Note (note) VALUES ('$selectedNote')";

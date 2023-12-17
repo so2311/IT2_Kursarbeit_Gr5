@@ -46,9 +46,13 @@
 	
 	<p>Hier kannst du alle deine Noten am Ende des Semesters eintragen, um deinen derzeitigen Notendurchschnitt zu berechnen. Wähle dafür einfach die passende Kategorie, das jeweilige Modul und deine Note in den Dropdownmenüs aus und klicke auf "Ausrechnen". </p>
 	<br>
+	
+<form action="verarbeitung.php" method="POST">
 		
-  <label for="kategorie">Kategorie:</label>
-	  <select name="kategorie" required>
+<label for="kategorie">Kategorie:</label>
+<input id="kategorie" name="kategorie"/>
+<select name="kategorie" required>
+	
 	    <option value="kategorie1">Gestaltung</option>
 	    <option value="kategorie2">Wirtschaft</option>
 	    <option value="kategorie3">Informatik</option>
@@ -57,8 +61,10 @@
       </select>
 	  <br>
 	  
-	  <label for="modul">Modul:</label>
-	  <select name="modul" required>
+<label for="modul">Modul:</label>
+<input id="modul" name="modul"/>
+<select name="modul" required>
+	
 	    <option value="modul1">Grundlagen der Ökonomie</option>
 	    <option value="modul2">Journalistische Grundlagen 1</option>
 	    <option value="modul3">Psychologie</option>
@@ -96,8 +102,10 @@
       </select>
 	  <br>
 	  
-	  <label for="note">Note:</label>
-	  <select name="note" id="note">
+<label for="note">Note:</label>
+<input id="note" name="note"/>
+<select name="note" id="note">
+	
 	    <option value="1.0">1,0</option>
 	    <option value="1.3">1,3</option>
 	    <option value="1.7">1,7</option>
@@ -112,9 +120,12 @@
 	    </select>
 	  <br>
 	  <br>
+	
 	  <!---Bootstrap Button Ausrechnen--->
 <button type="submit" name="ausrechnen"class="btn btn-danger">Ausrechnen</button>
 	
+	
+
 	
 <!---Code ausführen, wenn Formular abgeschickt wurde--->
 		<?php
