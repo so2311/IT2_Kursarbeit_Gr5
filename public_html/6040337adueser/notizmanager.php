@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link für css am Ende einfügen -->
+    <link rel="stylesheet" href="css/style.css">
     <title> Notizenmanager</title>
 </head>
 	
 <body>
 	
 	<h1> Notizenmanager </h1>
-	<p>Mit diesem Notizmanager behältst du den Überblick über alle deine Module und deine Lernaktivitäten:</p>
+	<p>Mit diesem Notizenmanager behältst du den Überblick über alle deine Module und deine Lernaktivitäten:</p>
 <!-- Semester kann ausgewählt werden -->
 <!-- 4. Semester entfällt, da es sich um das Praxissemester handelt -->
 <div class="form-container">

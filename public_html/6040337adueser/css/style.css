@@ -1,114 +1,65 @@
-/* CSS Document */
-
-.grid {
-	display: grid;
-	grid-template-rows: 150px auto auto 150px;
-	grid-template-columns: 20% 20% 20% 20%;
-}
-.header{
-	grid-column-start: 1;
-	grid-column-end: 6;
-	grid-row-start: 1;
-	grid-row-end: 2;
-	background: #F8CBCB;
-	padding: 2px;
-	text-align:center;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.footer{
-	grid-column-start: 1;
-	grid-column-end: 6;
-	grid-row-start: 4;
-	grid-row-end: 5;
-	background: #F8CBCB;
-	padding: 2px;
-	text-align:center;
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten */
+    gap: 20px; /* Abstand zwischen den Spalten */
+    margin: 20px; /* Außenabstand */
 }
 
-.nav{
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 4;
-	background: #F8CBF4;
-	padding: 2px;
-	text-align:center;
-}
-.main{
-	grid-column-start: 2;
-	grid-column-end: 5;
-	grid-row-start: 2;
-	grid-row-end: 4;
-	background: #DFD9DF;
-	padding: 2px;
-	text-align:left;
-}
-aside{
-	grid-column-start: 5;
-	grid-column-end: 6;
-	grid-row-start: 2;
-	grid-row-end: 4;
-	background: #D9DFDC;
-	padding: 2px;
-	text-align:center;
+.left-column {
+    grid-column: 1; /* Linke Spalte */
 }
 
-#x,#y,#aufgabendesign {
-		
-		font-size: 100px;
-		
-}
-#eingetrErgebnis{
-	font-size: 100px;
-	
-	width: 120px;
+.right-column {
+    grid-column: 2; /* Rechte Spalte */
+    align-self: flex-start; /* Oben ausrichten */
 }
 
-/* 
-Definition einer Animation. Sie verwendet keine Selektoren, sondern Zeitangaben
-*/
-@keyframes blink {
-	/* ocacity legt die Deckkraft des Elements fest */
-   0% { opacity: 1; } 
-  50% { opacity: 0; }
- 100% { opacity: 1; } 
-
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
-.blinking-text {
-  animation: blink 1s infinite;
+select {
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-.falschesErgebnis{
-	
-	animation: blink 3s  ;
-	animation-delay: 0.5s;
-	animation-duration: 3s;
-	font-size: 40px;
-	color: #FF262A
-}
-.richtigesErgebnis{
-	animation: blink 3s  ;
-	animation-delay: 0.5s;
-	animation-duration: 3s;
-	font-size: 40px;
-	color: #03E843
+button {
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 0; 
+    cursor: pointer;
 }
 
-#anzeige{
-	text-align: center;
-	background: #D3D3D4;
-	border: 20px solid #FF5E5E;
-	border-radius: 15px;
-	
+button:hover {
+    background-color: #8f8f8f;
 }
 
-.canvas-area{
-	border: 1px solid black;
-	
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    height: 35px;
 }
 
-h1 { color: #FF5E5E;}
-h2 { color: #E86590;}
-h3 { color: #37AD64;}
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
 
