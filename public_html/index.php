@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html>
   <head>
@@ -18,4 +19,26 @@
 	  <br>
 	  <a href="ergebnisse.php" >Übersicht aller Ergebnisse</a>
   </body>
+=======
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Startseite</title>
+  </head>
+  <body>
+    <h1>Der Studierendenhelfer</h1>
+	  
+	  <a href="notenberechner.php" >Hier geht's zum Notenberechner</a>
+	  <br>
+	  <br>
+	  <a href="checkliste.php" >Hier geht's zu deinen Checklisten</a>
+	  <br>
+	  <br>
+	  <a href="notizmanager.php" >Hier geht's zum Notizenmanager</a>
+	  <br>
+	  <br>
+	  <a href="ergebnisse.php" >Übersicht aller Ergebnisse</a>
+  </body>
+>>>>>>> 4867574ebb1c093413f7eff94f2bbbb47c5a6f82
 </html>

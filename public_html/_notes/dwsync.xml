@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="db_connect.php" server="webkurs.hs-woe.de//public_html/" local="133467998810944961" remote="133473958800000000" Dst="1" />
@@ -5,3 +6,6 @@
 <file name="ergebnisse.php" server="webkurs.hs-woe.de//public_html/" local="133473837492380659" remote="133473958800000000" Dst="1" />
 <file name="stylesheet.css" server="webkurs.hs-woe.de//public_html/" local="133473837507961547" remote="133473958800000000" Dst="1" />
 </dwsync>
+=======
+<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="index.html" server="webkurs.hs-woe.de//public_html/" local="3785164700" remote="3785161080" Dst="-1" /><file name="db_connect.php" server="webkurs.hs-woe.de//public_html/" local="3782972220" remote="3782972220" Dst="-1" /><file name="index.php" server="webkurs.hs-woe.de//public_html/" local="3785171105" remote="3784095000" Dst="-1" /></dwsync>
+>>>>>>> 4867574ebb1c093413f7eff94f2bbbb47c5a6f82
