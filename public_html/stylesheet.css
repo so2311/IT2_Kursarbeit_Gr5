@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Gridlayout */
+.container{
+	display:grid;
+    grid-template-columns:16rem 1fr 16rem;
+    grid-template-rows:auto 1fr auto;
+	grid-template-areas:
+		"header header header"
+		"nav nav nav"
+		"main side";
+grid-gap:10px;
+min-height:100vh;}
+
+header{
+	grid-area:header;
+	padding: 2rem;
+	background-color: lightcoral;}
+
+nav{
+	grid-area:nav;
+    padding: 2rem;
+    background-color: lightcoral;}
+
+
+main {
+	grid-area:main;
+	padding: 2rem;
+    background-color: lightgrey;}
+
+
+side{
+	grid-area:side;
+	padding: 2rem;
+    background-color: red;}
+
+       
+
+
+/* Überschrift */
+h1 {
+  color: black;
+  text-align: center;
+}
+
+h2
+{
+  color: darkred;
+  text-align: left;
+}
+
+/* Text */
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+
+

@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Gridlayout */
+.container{
+	display:grid;
+    grid-template-columns:16rem 1 fr 16rem;
+    grid-template-rows:auto 1 fr auto;
+	grid-template-areas:
+		"header header header"
+		"nav main side"
+		"footer footer footer";
+grid-gap:10px;
+min-height:100vh;}
+
+header{
+	grid-area:header;
+	padding: 2rem;
+	background-color: lightcoral;}
+
+nav{
+	grid-area:nav;
+    padding: 2rem;
+    background-color: lightcoral;}
+
+
+main {
+	grid-area:main;
+	padding: 2rem;
+    background-color: lightgrey;}
+
+
+side{
+	grid-area:side;
+	padding: 2rem;
+    background-color: red;}
+
+footer{
+	grid-area:footer;
+    padding: 2rem;
+    background-color: blue;}
+       
+
+
+/* Überschrift */
+h1 {
+  color: black;
+  text-align: center;
+}
+
+/* Text */
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+
+
+/* Dropdown Menüs*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
