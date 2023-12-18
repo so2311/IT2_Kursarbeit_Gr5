@@ -1,13 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Unbenanntes Dokument</title>
-</head>
-
-<body>
 	<?php
-	$can= mysqli_connect("m12242-07_2.kurs.jade-hs.de", "m12242-07_2", "kYRMfrPHD","m12242-07_2");
+	$can= mysqli_connect("m12242-07.kurs.jade-hs.de", "m12242-07", "kYRMfrPHD","m12242-07_2");
 	//mysqli_connect ("DB-Server (Domainname)", "Benutzername (Login)", "Kennwort", "Datenbank")
 	
 	
@@ -23,5 +15,3 @@
 	
 	
 	?>
-</body>
-</html>
