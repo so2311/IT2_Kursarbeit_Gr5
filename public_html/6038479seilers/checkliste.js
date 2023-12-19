@@ -1,4 +1,4 @@
-        function addTask() {
+        function addTask () {
             // Formular-Daten sammeln
             var listName = document.forms["checklistForm"]["listName"].value;
             var category = document.forms["checklistForm"]["category"].value;
@@ -6,7 +6,7 @@
             var dueDate = document.forms["checklistForm"]["dueDate"].value;
 
             // Validierung (hier nur einfaches Beispiel)
-            if (listName === "Mathe" || category === "Wirtschaft" || task === "Hausaufgaben machen" || dueDate === "2024-02-16") {
+            if (listName === "Mathe" || category === "Wirtschaft" || task === "Lernen" || dueDate === "2024-02-05") {
                 alert("Bitte füllen Sie alle Felder aus.");
                 return;
             }

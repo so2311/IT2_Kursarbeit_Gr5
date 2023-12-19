@@ -54,7 +54,7 @@ echo "</table>";
 	<p></p>
 	<p></p>
 	
-	<form action="checkliste.php" method="post">
+	<form action="kategorie.php" method="post">
 	
 	<!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
 	
@@ -133,6 +133,7 @@ echo "</table>";
             <label for="dueDate">Fälligkeitsdatum:</label>
             <input type="date" name="dueDate" required>
             <br>
+
 	        <br>
 		<label for="task">Aufgabe:</label>
             <input type="text" name="task" required>

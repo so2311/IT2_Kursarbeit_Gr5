@@ -18,7 +18,7 @@
 	<?php include "check_db_connect.php"; 
 	
 	if (!empty($_POST)) {
-   $sql = "INSERT INTO Kategorie (Modul, Kategorie, Aufgabe, Datum) VALUES ('".$_POST["Modul"]."','".$_POST["Kategorie"]."', '".$_POST["Aufgabe"]."', '".$_POST["Datum"]."')";
+   $sql = "INSERT INTO Aufgaben (Modul, Kategorie, Aufgabe, Datum) VALUES ('".$_POST["Modul"]."','".$_POST["Kategorie"]."', '".$_POST["Aufgabe"]."', '".$_POST["Datum"]."')";
 
 $db_erg = mysqli_query( $can, $sql );
 if ( ! $db_erg )
@@ -54,7 +54,7 @@ echo "</table>";
 	<p></p>
 	<p></p>
 	
-	<form action="checkliste.php" method="post">
+	<form action="aufgabe.php" method="post">
 	
 	<!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
 	
