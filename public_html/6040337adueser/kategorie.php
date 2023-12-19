@@ -15,7 +15,7 @@ ini_set("display_errors", 1);
 <?php include "../db_connect.php";
 
 if (!empty($_POST)) {
-    $sql = "INSERT INTO Semester (Semester) VALUES ('" . $_POST["semester"] . "')";
+    $sql = "INSERT INTO Kategorie (Kategorie) VALUES ('" . $_POST["kategorie"] . "')";
 
     $db_erg = mysqli_query($can, $sql);
     if (!$db_erg) {
@@ -29,11 +29,11 @@ if (!empty($_POST)) {
 <p>Mit diesem Notizenmanager behältst du den Überblick über alle deine Module und deine Lernaktivitäten:</p>
 <!-- Semester kann ausgewählt werden -->
 <!-- 4. Semester entfällt, da es sich um das Praxissemester handelt -->
-<form action="semester.php" method="post">
+<form action="kategorie.php" method="post">
     <div class="form-container">
         <div class="left-column">
             <label for="semester">Semester Name:</label>
-            <input type="text" name="semester">
+            <input type="text" name="kategorie">
         </div>
 
         <div id="notes-container">

@@ -16,106 +16,106 @@ function updateCourses() {
 
     // Kurse basierend auf dem ausgewählten Semester und der Kategorie
     if (selectedSemester === '1') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 1, Technik
             courseSelect.innerHTML = '<option value="grundlagen-it">Einführung in die Informatik</option>' +
                                      '<option value="mathematik">Mathematik</option>'
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 1, Gestaltung
             courseSelect.innerHTML = '<option value="grundlagen-gestaltung">Gestaltung, Grundlagen und Technik</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 1, Journalismus
             courseSelect.innerHTML = '<option value="journalistische-grundlagen-1">Journalistische Grundlagen 1</option>' +
                                      '<option value="psychologie">Psychologie</option>' +
                                      '<option value="wissenschaftliches-arbeiten-1">Wissenschaftliches Arbeiten 1</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 1, Wirtschaft
             courseSelect.innerHTML = '<option value="grundlagen-oekonomie">Grundlagen der Ökonomie</option>'
         }
 
     } else if (selectedSemester === '2') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 2, Technik
             courseSelect.innerHTML = '<option value="it-1">IT 1</option>' 
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 2, Gestaltung
             courseSelect.innerHTML = '<option value="typografie-und-layout">Typografie und Layout</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 2, Journalismus
             courseSelect.innerHTML = '<option value="journalistische-grundlagen-2">Journalistische Grundlagen 2</option>' +
                                      '<option value="soziologie">Soziologie</option>' +
                                      '<option value="english-for-the-media">English for the Media</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 2, Wirtschaft
             courseSelect.innerHTML = '<option value="rechnungswesen">Rechnungswesen und Controlling</option>'
         }
 
     } else if (selectedSemester === '3') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 3, Technik
             courseSelect.innerHTML = '<option value="it-2">IT 2</option>' +
                                      '<option value="statistik">Statistik</option>';
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 3, Gestaltung
             courseSelect.innerHTML = '<option value="visuelle-kommunikation-1">Visuelle Kommunikation 1</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 3, Journalismus
             courseSelect.innerHTML = '<option value="medien-und-kommunikation-1">Medien und Kommunikation 1</option>' +
                                      '<option value="spezieller-journalismus">Spezieller Journalismus</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 3, Wirtschaft
             courseSelect.innerHTML = '<option value="medienwirtschaft-und-marketing">Medienwirtschaft und Marketing</option>'
         }
 
     } else if (selectedSemester === '5') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 5, Technik
             courseSelect.innerHTML = '<option value="medientechnik">Medientechnik</option>'
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 5, Gestaltung
             courseSelect.innerHTML = '<option value="visuelle-kommunikation-2">Visuelle Kommunikation 2</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 5, Journalismus
             courseSelect.innerHTML = '<option value="medien-und-kommunikation-2">Medien und Kommunikation 2</option>' +
                                      '<option value="medienprojekt-1">Medienprojekt 1</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 5, Wirtschaft
             courseSelect.innerHTML = '<option value="investition-und-finanzierung">Investition und Finanzierung</option>' +
 									 '<option value="recht">Recht</option>';
         }
 
     } else if (selectedSemester === '6') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 6, Technik
             courseSelect.innerHTML = '<option value="multimedia">Multimedia</option>'
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 6, Gestaltung
             courseSelect.innerHTML = '<option value="bitte-waehlen">Bitte wählen</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 6, Journalismus
             courseSelect.innerHTML = '<option value="schwerpunkt-1-journalismus">Schwerpunkt 1 Journalismus</option>' +
                                      '<option value="pr">PR und Unternehmenskommunikation</option>'+
 									 '<option value="seminar-medienforschung">Seminar Medienforschung</option>'+
 									 '<option value="medienprojekt-2">Medienprojekt 2</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 6, Wirtschaft
             courseSelect.innerHTML = '<option value="organisation-und-fuehrung">Organisation und Führung</option>' +
 									 '<option value="schwerpunkt-1-wirtschaft">Schwerpunkt 1 Wirtschaft</option>';
         }
 
     } else if (selectedSemester === '7') {
-        if (selectedCategory === 'technik') {
+        if (selectedCategory === '1') {
             // Kurse für Semester 7, Technik
             courseSelect.innerHTML = '<option value="bitte-waehlen">Bitte wählen</option>' 
-        } else if (selectedCategory === 'gestaltung') {
+        } else if (selectedCategory === '2') {
             // Kurse für Semester 7, Gestaltung
             courseSelect.innerHTML = '<option value="bitte-waehlen">Bitte wählen</option>' 
-        } else if (selectedCategory === 'journalismus') {
+        } else if (selectedCategory === '3') {
             // Kurse für Semester 7, Journalismus
             courseSelect.innerHTML = '<option value="schwerpunkt-2-journalismus">Schwerpunkt 2 Journalismus</option>' +
                                      '<option value="strategisches-medienmanagement">Strategisches Medienmanagement</option>' +
                                      '<option value="studienabschlussvorbereitung">Studienabschlussvorbereitung</option>';
-        } else if (selectedCategory === 'wirtschaft') {
+        } else if (selectedCategory === '4') {
             // Kurse für Semester 7, Wirtschaft
             courseSelect.innerHTML = '<option value="schwerpunkt-2-wirtschaft">Schwerpunkt 2 Wirtschaft</option>'
 									 '<option value="medienrecht">Medienrecht</option>';
