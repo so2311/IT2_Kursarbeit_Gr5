@@ -18,7 +18,7 @@
 	<?php include "check_db_connect.php"; 
 	
 	if (!empty($_POST)) {
-   $sql = "INSERT INTO Modul (Modul, Kategorie, Aufgabe, Datum) VALUES ('".$_POST["Modul"]."','".$_POST["Kategorie"]."', '".$_POST["Aufgabe"]."', '".$_POST["Datum"]."')";
+   $sql = "INSERT INTO Kategorie (Modul, Kategorie, Aufgabe, Datum) VALUES ('".$_POST["Modul"]."','".$_POST["Kategorie"]."', '".$_POST["Aufgabe"]."', '".$_POST["Datum"]."')";
 
 $db_erg = mysqli_query( $can, $sql );
 if ( ! $db_erg )
@@ -55,128 +55,127 @@ echo "</table>";
 	<p></p>
 	
 	<form action="checkliste.php" method="post">
-			
+	
 	<!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
 	
 		<div class="container1">
 			
 			<!-- Der Name der Checkliste wird eingegeben, bzw. das Modul, für das man eine Checkliste anlegen möchte -->
 	
-            <label for="name">Name der Checkliste:</label>
-			<input type="text" name="modul" id="modul" onchange="updateCourses()" required>
+            <label for="listname">Name der Checkliste:</label>
+            <input type="text" name="listName" required>
             <br>
 	    	<br>
 			
 			<!-- Die Kategorie wird eingegeben, bzw. die vier Säulen des Studiengangs -->
 			
 			 <label for="category">Kategorie:</label>
-			<input type="text" name="Kategorie" id="kategorie" onchange="updateCourses()" required>
+			<input type="text" name="category" required>
             <br>
 		    <br>
 			
 			<!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
 			
             <label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 			<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		    <label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 			<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
 		<br>
 		<br>
 	    	<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 			<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		    <label for="task">Aufgabe:</label>
-           <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 			<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
 	</div>
 		
 			<div class="container2">
-		<label for="name">Name der Checkliste:</label>
-           <input type="text" name="modul" id="modul" onchange="updateCourses()" required>
+		<label for="listname">Name der Checkliste:</label>
+            <input type="text" name="listName" required>
 		<br>
 		<br>
             <label for="category">Kategorie:</label>
-        <input type="text" name="Kategorie" id="kategorie" onchange="updateCourses()" required>
+        <input type="text" name="category" required>
             <br>
 		    <br>
             <label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
-				<br>
+            <input type="text" name="task" required>
 				<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 				<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
 		<br>
 		<br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 				<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 				<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-			  <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+			   <input type="date" name="dueDate" required>
 	      </div>
           
 	<div class="container3">
-		<label for="name">Name der Checkliste:</label>
-            <input type="text" name="modul" id="modul" onchange="updateCourses()" required>
+		<label for="listname">Name der Checkliste:</label>
+            <input type="text" name="listName" required>
 		<br>
 		<br>
             <label for="category">Kategorie:</label>
-       <input type="text" name="Kategorie" id="kategorie" onchange="updateCourses()" required>
+       <input type="text" name="category" required>
             <br>
 		    <br>
             <label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
             <br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
             <br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
 		<br>
 		<br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
             <br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+            <input type="date" name="dueDate" required>
             <br>
 	        <br>
 		<label for="task">Aufgabe:</label>
-            <input type="text" name="Aufgabe" id="Aufgabe" onchange="updateCourses()" required>
+            <input type="text" name="task" required>
 		<br>
             <label for="dueDate">Fälligkeitsdatum:</label>
-			<input type="date" name="Datum" id="Datum" onchange="updateCourses()" required>
+			<input type="date" name="dueDate" required>
     </div>
 	<br>
 	<br>	
