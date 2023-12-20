@@ -16,13 +16,13 @@ ini_set("display_errors", 1);
 </head>
 
 	<?php
-$can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
+$con= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
 if (!empty($_POST)) {
     var_dump($_POST);
     $sql = "INSERT INTO Aufgaben (Module, Kategorien, Aufgaben, Datum) VALUES ('" . $_POST["Module"] . "','" . $_POST["Kategorien"] . "', '" . $_POST["Aufgaben"] . "', '" . $_POST["Datum"] . "')";
 
-    $db_erg = mysqli_query($can, $sql);
+    $db_erg = mysqli_query($con, $sql);
     if (!$db_erg) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 
 	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModuleID ORDER BY AufgabenID DESC LIMIT 10 ";
 
-$db_erg = mysqli_query($can, $sql);
+$db_erg = mysqli_query($con, $sql);
 if (!$db_erg) {
     die('Ungültige Abfrage: ' . mysqli_error());
 }
@@ -47,11 +47,11 @@ if (!$db_erg) {
 
     <div class="container1">
         <!-- Der Name der Checkliste wird eingegeben, bzw. das Modul, für das man eine Checkliste anlegen möchte -->
-        <label for="listname">Modul:</label>
-        <select name="modul" required>
+        <label for="Module">Modul:</label>
+        <select name="Module" required>
             <option value="">Bitte Wählen</option>
             <?php
-            while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
+            while ($zeile = mysqli_fetch_array($db_erg_module, MYSQLI_ASSOC)) {
                 echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Module'] . "</option>";
             }
 	?>
@@ -59,14 +59,14 @@ if (!$db_erg) {
         <br>
         <br>
         <!-- Die Kategorie wird eingegeben, bzw. die vier Säulen des Studiengangs -->
-        <label for="kategorie">Kategorie:</label>
-        <select name="kategorie" required>
+        <label for="Kategorien">Kategorie:</label>
+        <select name="Kategorien" required>
             <option value="">Bitte Wählen</option>
-			 <?php
-            while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
-             }
-		 ?>
+			<?php
+                  while ($zeile = mysqli_fetch_array($db_erg_kategorien, MYSQLI_ASSOC))
+                  echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
+}
+             ?>
         </select>
         <br>
         <br>
