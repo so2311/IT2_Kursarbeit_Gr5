@@ -8,7 +8,7 @@ include "dbconnect.php";
 if (!empty($_POST)) {
     $sql = "INSERT INTO Kategorien (Kategorien) VALUES ('" . $_POST["kategorie"] . "')";
 
-    $db_erg = mysqli_query($can, $sql);
+    $db_erg = mysqli_query($con, $sql);
     if (!$db_erg) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
@@ -53,7 +53,7 @@ if (!empty($_POST)) {
         <form action="kategorie.php" method="POST">
 
             <label for="kategorie">Kategorie Name:</label>
-            <input type="text" name="semester">
+            <input type="text" name="kategorie">
         </div>
 				
 </html>
