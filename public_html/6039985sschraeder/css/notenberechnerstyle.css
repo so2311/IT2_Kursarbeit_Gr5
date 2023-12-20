@@ -8,25 +8,10 @@
     grid-template-rows:auto 1 fr auto;
 	grid-template-areas:
 		"header header header"
-		"nav main main"
+		"main main main"
 		"footer footer footer";
 grid-gap:10px;
 min-height:100vh;}
-
-header{
-	grid-area:header;
-	padding: 2rem;
-	background-color: lightgray;}
-
-header img {
-            width: 100%; 
-            max-height: 300px; 
-            object-fit: cover; }
-
-nav{
-	grid-area:nav;
-    padding: 2rem;
-    background-color: dimgrey;}
 
 
 main {
@@ -34,14 +19,7 @@ main {
 	padding: 2rem;
     background-color: lightgrey;}
 
-
-footer{
-	grid-area:footer;
-    padding: 2rem;
-    background-color: red;}
        
-
-
 /* Überschrift */
 h1 {
   color: black;
@@ -53,7 +31,6 @@ p {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
   font-size: 20px;
 }
-
 
 
 /* Dropdown Menüs*/

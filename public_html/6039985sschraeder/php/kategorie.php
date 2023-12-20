@@ -1,10 +1,8 @@
 <?php
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
-	
-	
+
 include "dbconnect.php";
 
+//Eintragen derKategorie in die Datenbank
 if (!empty($_POST)) {
     $sql = "INSERT INTO Kategorien (Kategorie) VALUES ('" . $_POST["kategorie"] . "')";
 
@@ -24,10 +22,6 @@ if (!empty($_POST)) {
 
     <!-- stylesheet verlinkung-->
     <link rel="stylesheet" href="notenberechnerstyle.css">
-
-    <!-- javascript verlinkung-->
-    <script src="notenberechnerjavascript.js"></script>
-
 
     <!-- Bootstrap Einbindung -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"

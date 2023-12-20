@@ -1,10 +1,8 @@
 <?php
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
-	
 	
 include "dbconnect.php";
 
+//Daten eintragen in Tabelle Modul
 if (!empty($_POST)) {
 
     $sql = "INSERT INTO Modul (Modul) VALUES ('" . $_POST["modul"] . "')";
@@ -25,9 +23,6 @@ if (!empty($_POST)) {
 
     <!-- stylesheet verlinkung-->
     <link rel="stylesheet" href="notenberechnerstyle.css">
-
-    <!-- javascript verlinkung-->
-    <script src="notenberechnerjavascript.js"></script>
 
 
     <!-- Bootstrap Einbindung -->
