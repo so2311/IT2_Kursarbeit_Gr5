@@ -37,18 +37,8 @@ if (!empty($_POST)) {
 </head>
 <body>
 <div class="container">
-
-    <header>
-
-        <h1>Notenberechner</h1>
-
-    </header>
-
-    <main>
-
-
-        <body>
-			<!---Navigationsmenü--->
+	
+<!---Navigationsmenü--->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,6 +83,16 @@ if (!empty($_POST)) {
     </div>
 </nav>
 
+    <header>
+
+        <h1>Notenberechner</h1>
+
+    </header>
+
+    <main>
+
+        <body>
+			
         <form action="modul.php" method="POST">
 
             <label for="modul">Modul Name:</label>

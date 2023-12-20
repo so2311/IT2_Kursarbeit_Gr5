@@ -199,5 +199,4 @@ $db_erg_kategorie = mysqli_query($con, $sql);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </div>
 </body>
-	<footer style="color:white">Jade Hochschule; Der Studierendenhelfer von Selina Schräder, Allegra Düser und Sophie Eilers</footer>
 </html>

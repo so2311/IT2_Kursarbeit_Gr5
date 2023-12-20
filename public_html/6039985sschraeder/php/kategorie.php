@@ -36,14 +36,6 @@ if (!empty($_POST)) {
 </head>
 <body>
 <div class="container">
-
-    <header>
-
-        <h1>Notenberechner</h1>
-
-    </header>
-
-    <main>
 <!---Navigationsmenü--->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>
@@ -88,6 +80,14 @@ if (!empty($_POST)) {
         </ul>
     </div>
 </nav>
+
+    <header>
+
+        <h1>Notenberechner</h1>
+
+    </header>
+
+    <main>
 
         <body>
 
