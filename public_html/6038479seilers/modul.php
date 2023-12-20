@@ -19,20 +19,12 @@ ini_set("display_errors", 1);
 $can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
 if (!empty($_POST)) {
-    var_dump($_POST);
-    $sql = "INSERT INTO Aufgaben (Modul, Kategorie, Aufgaben, Datum) VALUES ('" . $_POST["Modul"] . "','" . $_POST["Kategorie"] . "', '" . $_POST["Aufgaben"] . "', '" . $_POST["Datum"] . "')";
+    $sql = "INSERT INTO Module (Modul) VALUES ('" . $_POST["Modul"] . "')";
 
     $db_erg = mysqli_query($can, $sql);
     if (!$db_erg) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
-} else {
-
-	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorie = Kategorie.KategorieID JOIN Module ON Aufgaben.Module = Module.ModuleID ORDER BY AufgabenID DESC LIMIT 10 ";
-
-$db_erg = mysqli_query($can, $sql);
-if (!$db_erg) {
-    die('Ungültige Abfrage: ' . mysqli_error());
 }
 ?>
 
@@ -54,7 +46,7 @@ if (!$db_erg) {
             while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
                 echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Modul'] . "</option>";
             }
-	?>
+            ?>
         </select>
         <br>
         <br>
@@ -62,16 +54,17 @@ if (!$db_erg) {
         <label for="kategorie">Kategorie:</label>
         <select name="kategorie" required>
             <option value="">Bitte Wählen</option>
-			 <?php
-            while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Modul'] . "</option>";
-            }
+            <?php
+            while ($zeile = mysqli_fetch_array($db_erg_kategorie, MYSQLI_ASSOC)) {
+                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorie'] . "</option>";
+			} 
 			?>
+			
         </select>
         <br>
         <br>
 		
-        <!-- Die fällige Aufgabe kann eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
+        <!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
 
         <label for="task">Aufgabe:</label>
         <input type="text" name="task" required>
