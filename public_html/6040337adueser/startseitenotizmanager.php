@@ -14,9 +14,9 @@ if (!$db_erg) {
 
 
 ?>
+<h2>Notizenmanager</h2>
     <table class="table">
         <tr>
-            <th>Notiz ID</th>
             <th>Notiz</th>
             <th>Semester</th>
             <th>Kategorie</th>
@@ -25,7 +25,6 @@ if (!$db_erg) {
         <?php
         while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)) {
             echo "<tr>";
-            echo "<td>" . $zeile['NotizenID'] . "</td>";
             echo "<td>" . $zeile['Notizen'] . "</td>";
             echo "<td>" . $zeile['Semester'] . "</td>";
             echo "<td>" . $zeile['Kategorie'] . "</td>";

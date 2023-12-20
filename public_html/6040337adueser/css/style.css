@@ -63,6 +63,12 @@ textarea {
     padding: 5px;
 }
 
+footer{
+	grid-area:footer;
+    padding: 2rem;
+    background-color: red;
+}
+
 /* Media Query für mobile Ansicht */
 @media only screen and (max-width: 600px) {
     .form-container {
