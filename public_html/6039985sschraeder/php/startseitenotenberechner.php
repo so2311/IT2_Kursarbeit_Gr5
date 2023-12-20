@@ -3,11 +3,11 @@
 
 //JOIN für Fremdschlüssel fk_modul und fk_kategorie und die letzten 10 Beiträge mit DESC LIMIT 10
 $sql = "SELECT * FROM 
-Notizen JOIN Kategorie ON Notizen.Kategorie = Kategorie.
+Noten JOIN Kategorie ON Noten.Kategorie = Kategorie.
 
-KategorieID JOIN Semester ON Notizen.Semester = Semester.SemesterID 
+kategorieid JOIN Modul ON Noten.Modul = Modul.modulid 
 
-ORDER BY NotizenID DESC LIMIT 10 ">
+ORDER BY notenid DESC LIMIT 10 ">
 
 $db_erg = mysqli_query($con, $sql);
 if (!$db_erg) {
