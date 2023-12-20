@@ -2,11 +2,11 @@
  error_reporting(E_ALL);
  ini_set("display_errors", 1);
 
-include "dbconnect.php"
+include "dbconnect.php";
 	
 //JOIN für Fremdschlüssel fk_modul und fk_kategorie und die letzten 10 Beiträge mit DESC LIMIT 10
 $sql = "SELECT * FROM Noten JOIN Kategorie ON Noten.Kategorie = Kategorie.kategorieid JOIN Modul ON Noten.Modul = Modul.modulid 
-ORDER BY notenid DESC LIMIT 10 ">
+ORDER BY notenid DESC LIMIT 10 ";
 
 $db_erg = mysqli_query($con, $sql);
 if (!$db_erg) {
