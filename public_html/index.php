@@ -65,7 +65,7 @@
     ini_set("display_errors", 1);
 
     include "6039985sschraeder/php/startseitenotenberechner.php";
-    //include "../6038479seilers/startseitecheckliste.php";
+    include "6038479seilers/startseitecheckliste.php";
     include "6040337adueser/startseitenotizmanager.php";
 
     ?>
