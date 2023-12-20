@@ -41,40 +41,17 @@
 
 	<main>
 <h2>Deine Ergebnisse aus dem Notenberechner</h2>
-<p>Notendurchschnitt:</p>
-	<?php
-echo "Notendurchschnitt: "; 
-?>
-	
-<p>Anzahl eingetragener Noten</p>
-	<?php
-echo "";
-	?>
-	
-<p>Anzahl der jeweiligen Noten</p>
-	<?php
 
-echo "Die Note 1,0 hast du ... oft bekommen";
-echo "Die Note 1,3 hast du ... oft bekommen";
-echo "Die Note 1,7 hast du ... oft bekommen";
-echo "Die Note 2,0 hast du ... oft bekommen";
-echo "Die Note 2,3 hast du ... oft bekommen";
-echo "Die Note 2,7 hast du ... oft bekommen";
-echo "Die Note 3,0 hast du ... oft bekommen";
-echo "Die Note 3,3 hast du ... oft bekommen";
-echo "Die Note 3,7 hast du ... oft bekommen";
-echo "Die Note 4,0 hast du ... oft bekommen";
-echo "Die Note 5,0 hast du ... oft bekommen";
-?>
-<br>
-	
-	
-	
+	<?php
+    include "6039985sschraeder/php/ergebnissenotenberechner.php";
+
+    ?>
 	
 	
 	
 <h2>Deine Ergebnisse aus den Checklisten</h2>
 <p> Anzahl der Checklisten</p>
+
 
 
 <br>
@@ -85,8 +62,12 @@ echo "Die Note 5,0 hast du ... oft bekommen";
 	
 <h2>Deine Ergebnisse aus dem Notizenmanager:</h2>
 <p>Anzahl der Notizen</p>
-	
-<br>
+        <?php
+        include "6040337adueser/ergebnissenotizmanager.php";
+
+        ?>
+
+        <br>
 <br>
 	
 	

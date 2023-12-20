@@ -6,6 +6,7 @@
 include "dbconnect.php";
 
 if (!empty($_POST)) {
+
     $sql = "INSERT INTO Modul (Modul) VALUES ('" . $_POST["modul"] . "')";
 
     $db_erg = mysqli_query($con, $sql);
@@ -54,6 +55,9 @@ if (!empty($_POST)) {
 
             <label for="modul">Modul Name:</label>
             <input type="text" name="modul">
+            <div id="notes-container">
+                <button type="submit" class="button">Modul speichern</button>
+            </div>
         </div>
 				
 </html>

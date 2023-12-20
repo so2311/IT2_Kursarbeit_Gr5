@@ -12,7 +12,7 @@ ini_set("display_errors", 1);
     <title> Notizenmanager</title>
 </head>
 
-<?php include "../db_connect.php";
+<?php include "db_connect.php";
 
 if (!empty($_POST)) {
     $sql = "INSERT INTO Kategorie (Kategorie) VALUES ('" . $_POST["kategorie"] . "')";
@@ -32,7 +32,7 @@ if (!empty($_POST)) {
 <form action="kategorie.php" method="post">
     <div class="form-container">
         <div class="left-column">
-            <label for="semester">Semester Name:</label>
+            <label for="kategorie">Kategorie:</label>
             <input type="text" name="kategorie">
         </div>
 

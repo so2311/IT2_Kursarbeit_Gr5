@@ -11,8 +11,11 @@ ini_set("display_errors", 1);
     <link rel="stylesheet" href="css/style.css">
     <title> Notizenmanager</title>
 </head>
-
-<?php include "../db_connect.php";
+<header class=header>
+    <h1>Notizenmanager</h1>
+    <img src="../bilder/Notizenmanager%20header.png" alt="Header">
+</header>
+<?php include "db_connect.php";
 
 if (!empty($_POST)) {
     $sql = "INSERT INTO Notizen (Semester, Kategorie, Kurs, Notizen) VALUES ('" . $_POST["semester"] . "','" . $_POST["kategorie"] . "', '" . $_POST["kurs"] . "', '" . $_POST["notiz"] . "')";
@@ -72,7 +75,7 @@ $db_erg_semester = mysqli_query($can, $sql);
     <div class="form-container">
         <div class="left-column">
             <label for="semester">Semester:</label>
-            <select name="semester" id="semester" onchange="updateCourses()">
+            <select name="semester" id="semester" onchange="updateCourses(this)">
                 <option value="">Bitte Wählen</option>
                 <?php
                 while ($zeile = mysqli_fetch_array($db_erg_semester, MYSQLI_ASSOC)) {

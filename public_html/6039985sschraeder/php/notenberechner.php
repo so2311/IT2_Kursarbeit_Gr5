@@ -27,19 +27,6 @@ $sql = "SELECT * FROM Noten JOIN Kategorien ON Noten.kategorie = Kategorien.kate
 $db_erg_Noten = mysqli_query($con, $sql);
 
 
-echo '<table border="1">';
-while ($zeile = mysqli_fetch_array( $db_erg_Noten, MYSQLI_ASSOC))
-{
-    echo "<tr>";
-    echo "<td>". $zeile['notenid'] . "</td>";
-    echo "<td>". $zeile['modul'] . "</td>";
-    echo "<td>". $zeile['kategorie'] . "</td>";
-    echo "<td>". $zeile['note'] . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-
 // Auslesen aus der Datenbank
 $sql = "SELECT * FROM Modul";
 
@@ -71,20 +58,18 @@ $db_erg_kategorie = mysqli_query($con, $sql);
 
     <!-- responsive Design mit bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
 </head>
 <body>
 <div class="container">
-	
-	
-	<header>
-		 <img src="../../bilder/Notenberechner header.png" alt="Header-Bild">
-		<br>
-		<br>
-         <h1>Dein Notenberechner</h1>
+
+    <header>
+
+        <h1>Notenberechner</h1>
+         <img src="../../bilder/Notenberechner%20header.png" alt="Header">
     </header>
 
     <nav>
+       
     <?php
     //Navigation für den Frontend Bereich
 
@@ -99,11 +84,12 @@ $db_erg_kategorie = mysqli_query($con, $sql);
         }
         echo "</ul>"
     ?>
+
     </nav>
 
-	
-	
     <main>
+
+
         <body>
 
         <p>Hier kannst du alle deine Noten am Ende des Semesters eintragen, um deinen derzeitigen Notendurchschnitt zu
@@ -134,99 +120,35 @@ $db_erg_kategorie = mysqli_query($con, $sql);
                 ?>
             </select>
             <br>
- 
-	  <label for="note">Note:</label>
-	  <select name="note" id="note">
-	    <option value="1.0">1,0</option>
-	    <option value="1.3">1,3</option>
-	    <option value="1.7">1,7</option>
-	    <option value="2.0">2,0</option>
-	    <option value="2.3">2,3</option>
-	    <option value="2.7">2,7</option>
-	    <option value="3.0">3,0</option>
-	    <option value="3.3">3,3</option>
-	    <option value="3.7">3,7</option>
-	    <option value="4.0">4,0</option>
-	    <option value="5.0">5,0</option>
-	    </select>
-	  <br>
-         
+
+			 <label for="note">Note:</label>
+            <select name="note" required>
+                <option value="">Bitte Wählen</option>
+                <option value="1.0">1.0</option>
+                <option value="2.0">2.0</option>
+                <option value="3.0">3.0</option>
+            </select>
+            <br>
+			
+
             <!---Bootstrap Button Ausrechnen--->
             <button type="submit" name="ausrechnen" class="btn btn-danger">Ausrechnen</button>
 
         </form>
         <br>
-			
-			
-			
-		<?php
-			
-$con = mysqli_connect("m12242-39.kurs.jade-hs.de", "m12242-39", "5zvHLEaO_", "m12242-39_2");
-
-
-if (isset($_POST['ausrechnen'])) {
-    $kategorie = $_POST['kategorie'];
-    $modul = $_POST['modul'];
-    $note = $_POST['note'];
-
-    $queryNoten= "INSERT INTO Noten (modul, kategorie,note) VALUES ('$kategorie', '$modul', $note)";
-    mysqli_query($con, $queryNoten);
-
-    if ($queryNoten) {
-        echo "Daten gespeichert";
-    } else {
-        echo "Daten konnten nicht gespeichert werden";
-    }
-}
-
-// Auslesen aus der Datenbank
-$sql = "SELECT * FROM Noten JOIN Kategorien ON Noten.kategorie = Kategorien.kategorieid JOIN Modul ON Noten.modul = Modul.modulid";
-
-$db_erg_Noten = mysqli_query($con, $sql);
-
-
-echo '<table border="1">';
-while ($zeile = mysqli_fetch_array( $db_erg_Noten, MYSQLI_ASSOC))
-{
-    echo "<tr>";
-    echo "<td>". $zeile['notenid'] . "</td>";
-    echo "<td>". $zeile['modul'] . "</td>";
-    echo "<td>". $zeile['kategorie'] . "</td>";
-    echo "<td>". $zeile['note'] . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-
-// Auslesen aus der Datenbank
-$sql = "SELECT * FROM Modul";
-
-$db_erg = mysqli_query($con, $sql);
-
-// Auslesen aus der Datenbank
-$sql = "SELECT * FROM Kategorien";
-
-$db_erg_kategorie = mysqli_query($con, $sql);
-
-			
-			
-			// Durchschnitt aller Noten aus allen Modulen
-            $sqlAvg = "SELECT AVG(note) AS avg_value FROM Noten";
-            $resultAvg = mysqli_query($con, $sqlAvg);
-
-            $rowAvg = mysqli_fetch_assoc($resultAvg);
-            if ($rowAvg['avg_value'] !== null) {
-            echo "Notendurchschnitt: " . $rowAvg['avg_value'] . "<br>";
-            } else {
-            echo "Keine Ergebnisse <br>";
-            }
-			
-			
-			
-			
-			
-			?>
-
+        <?php
+        echo '<table border="1">';
+        while ($zeile = mysqli_fetch_array( $db_erg_Noten, MYSQLI_ASSOC))
+        {
+            echo "<tr>";
+            echo "<td>". $zeile['notenid'] . "</td>";
+            echo "<td>". $zeile['modul'] . "</td>";
+            echo "<td>". $zeile['kategorie'] . "</td>";
+            echo "<td>". $zeile['note'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        ?>
         <br>
         <p> Klicke auf "Ergebnisse", um deine Noten in einer Übersicht zu sehen. Du siehst dort außerdem in einer
             Statistik, wie oft du welche Note bekommen hast. </p>
@@ -235,10 +157,6 @@ $db_erg_kategorie = mysqli_query($con, $sql);
         <p><a href="ergebnisse.php" class="btn btn-danger">Ergebnisse</a></p>
 
     </main>
-		
-		
-		
-		
 
     <side>
         <p>Ausgabe Noten</p>
@@ -247,12 +165,11 @@ $db_erg_kategorie = mysqli_query($con, $sql);
         if (isset($_SESSION['kategorie']) && isset($_SESSION['modul']) && isset($_SESSION['note'])) {
         echo $_SESSION['kategorie'] . ", " . $_SESSION['modul'] . ", " . $_SESSION['note'];
         }
-        ?>
+?>
+		
     </side>
 
 
-		
-		
 </div>
 </body>
 </html>

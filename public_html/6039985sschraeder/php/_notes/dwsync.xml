@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<file name="berechnen.php" server="webkurs.hs-woe.de//public_html/" local="133474002849626194" remote="133473984600000000" Dst="1" />
+<file name="include.php" server="webkurs.hs-woe.de//public_html/" local="133474002849715975" remote="133473984600000000" Dst="1" />
 <file name="dbconnect.php" server="webkurs.hs-woe.de//public_html/" local="133474002849636194" remote="133473984600000000" Dst="1" />
-<file name="notenberechner.php" server="webkurs.hs-woe.de//public_html/" local="133475492306572170" remote="133475456400000000" Dst="1" />
-<file name="ergebnissenotenberechner.php" server="webkurs.hs-woe.de//public_html/" local="133475476165771451" remote="133475456400000000" Dst="1" />
-<file name="kategorie.php" server="webkurs.hs-woe.de//public_html/" local="133475403725478048" remote="133475456400000000" Dst="1" />
-<file name="modul.php" server="webkurs.hs-woe.de//public_html/" local="133475056730852130" remote="133475456400000000" Dst="1" />
-<file name="note.php" server="webkurs.hs-woe.de//public_html/" local="133475056675091170" remote="133475456400000000" Dst="1" />
-<file name="startseitenotenberechner.php" server="webkurs.hs-woe.de//public_html/" local="133475487490602016" remote="133475456400000000" Dst="1" />
+<file name="notenberechner.php" server="webkurs.hs-woe.de//public_html/" local="133474713927285081" remote="133474677600000000" Dst="1" />
+<file name="verarbeitung.php" server="webkurs.hs-woe.de//public_html/" local="133474065214152021" remote="133474029000000000" Dst="1" />
+<file name="ergebnisse.php" server="webkurs.hs-woe.de//public_html/" local="133474002849636194" remote="133473984600000000" Dst="1" />
 </dwsync>

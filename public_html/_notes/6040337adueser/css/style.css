@@ -63,28 +63,3 @@ textarea {
     padding: 5px;
 }
 
-/* Media Query für mobile Ansicht */
-@media only screen and (max-width: 600px) {
-    .form-container {
-        grid-template-columns: 1fr; /* Eine Spalte für mobile Ansicht */
-    }
-
-    .right-column {
-        grid-column: 1; /* Vollständige Breite für mobile Ansicht */
-        align-self: auto; /* Standardausrichtung für mobile Ansicht */
-    }
-
-    /* Stile für die mobile Ansicht */
-    #notes-container {
-        margin-top: 20px; 
-    }
-
-    #notes-container label {
-        margin-top: 10px; 
-    }
-
-    #notes-container button {
-        margin-top: 10px; 
-    }
-}
-

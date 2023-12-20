@@ -1,194 +1,104 @@
 <?php
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	 <meta charset="UTF-8">
-	
-	<!-- Steuerung und Verhalten der Website bei mobilen Geräten-->
+    <meta charset="UTF-8">
+
+    <!-- Steuerung und Verhalten der Website bei mobilen Geräten-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Deine Checklisten</title>
-<link rel="stylesheet" href="css/checkliste.css">
-	<script src="checkliste.js"></script>
+    <link rel="stylesheet" href="css/checkliste.css">
+    <script src="checkliste.js"></script>
 </head>
-	
-	<?php include "check_db_connect.php"; 
-	
-	if (!empty($_POST)) {
-   $sql = "INSERT INTO Kategorie (Modul, Kategorie, Aufgabe, Datum) VALUES ('".$_POST["Modul"]."','".$_POST["Kategorie"]."', '".$_POST["Aufgabe"]."', '".$_POST["Datum"]."')";
-
-$db_erg = mysqli_query( $can, $sql );
-if ( ! $db_erg )
-{
-  die('Ungültige Abfrage: ' . mysqli_error());
-}  
-} else {  
-    
-}
-	
-	
-$sql = "SELECT * FROM Modul";
-
-$db_erg = mysqli_query( $can, $sql );
-if ( ! $db_erg )
-{
-  die('Ungültige Abfrage: ' . mysqli_error());
-}
-var_dump($_POST);
-	echo '<table border="1">';
-while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
-{
-  echo "<tr>";
-  echo "<td>". $zeile['ModulID'] . "</td>";
-  echo "<td>". $zeile['Modul'] . "</td>";
-  echo "</tr>";
-}
-echo "</table>";
-?>	
-	
-<body>
-	<h1 style="color: black;">Deine Checklisten</h1>
-	<p></p>
-	<p></p>
-	
-	<form action="checkliste.php" method="post">
-	
-	<!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
-	
-		<div class="container1">
-			
-			<!-- Der Name der Checkliste wird eingegeben, bzw. das Modul, für das man eine Checkliste anlegen möchte -->
-	
-            <label for="listname">Name der Checkliste:</label>
-            <input type="text" name="listName" required>
-            <br>
-	    	<br>
-			
-			<!-- Die Kategorie wird eingegeben, bzw. die vier Säulen des Studiengangs -->
-			
-			 <label for="category">Kategorie:</label>
-			<input type="text" name="category" required>
-            <br>
-		    <br>
-			
-			<!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
-			
-            <label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-			<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		    <label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-			<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-		<br>
-		<br>
-	    	<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-			<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		    <label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-			<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-	</div>
-		
-			<div class="container2">
-		<label for="listname">Name der Checkliste:</label>
-            <input type="text" name="listName" required>
-		<br>
-		<br>
-            <label for="category">Kategorie:</label>
-        <input type="text" name="category" required>
-            <br>
-		    <br>
-            <label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-				<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-				<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-		<br>
-		<br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-				<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-				<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-			   <input type="date" name="dueDate" required>
-	      </div>
-          
-	<div class="container3">
-		<label for="listname">Name der Checkliste:</label>
-            <input type="text" name="listName" required>
-		<br>
-		<br>
-            <label for="category">Kategorie:</label>
-       <input type="text" name="category" required>
-            <br>
-		    <br>
-            <label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-            <br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-            <br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-		<br>
-		<br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-            <br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-            <input type="date" name="dueDate" required>
-            <br>
-	        <br>
-		<label for="task">Aufgabe:</label>
-            <input type="text" name="task" required>
-		<br>
-            <label for="dueDate">Fälligkeitsdatum:</label>
-			<input type="date" name="dueDate" required>
-    </div>
-	<br>
-	<br>	
-	
-	<!-- Mit dem Button werden die Daten gespeichert -->
-	
-		<button type="button" onclick="addTask ()">Aufgabe hinzufügen</button>
-        <br>
-	
+<header class=header>
+    <h1>Checklisten</h1>
+    <img src="../bilder/Checklisten%20header.png" alt="Header">
+</header>
 <?php
+$can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
-	include 'fortschrittsbalken.php';
-	
+if (!empty($_POST)) {
+    var_dump($_POST);
+    $sql = "INSERT INTO Aufgaben (Module, Kategorien, Aufgaben, Datum) VALUES ('" . $_POST["modul"] . "','" . $_POST["kategorie"] . "', '" . $_POST["task"] . "', '" . $_POST["datum"] . "')";
+
+    $db_erg = mysqli_query($can, $sql);
+    if (!$db_erg) {
+        die('Ungültige Abfrage: ' . mysqli_error());
+    }
+} else {
+
+}
+
+$sql = "SELECT * FROM Kategorien";
+
+$db_erg_kategorie = mysqli_query($can, $sql);
+
+$sql = "SELECT * FROM Module";
+
+$db_erg_modul = mysqli_query($can, $sql);
 ?>
+
+<body>
+<h1 style="color: black;">Deine Checklisten</h1>
+<p></p>
+<p></p>
+
+<form action="checkliste.php" method="post">
+
+    <!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
+
+    <div class="container1">
+        <!-- Der Name der Checkliste wird eingegeben, bzw. das Modul, für das man eine Checkliste anlegen möchte -->
+        <label for="listname">Modul:</label>
+        <select name="modul" required>
+            <option value="">Bitte Wählen</option>
+            <?php
+            while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
+                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Module'] . "</option>";
+            }
+            ?>
+        </select>
+        <br>
+        <br>
+        <!-- Die Kategorie wird eingegeben, bzw. die vier Säulen des Studiengangs -->
+        <label for="kategorie">Kategorie:</label>
+        <select name="kategorie" required>
+            <option value="">Bitte Wählen</option>
+            <?php
+            while ($zeile = mysqli_fetch_array($db_erg_kategorie, MYSQLI_ASSOC)) {
+                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
+            }
+            ?>
+        </select>
+        <br>
+        <br>
+        <!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
+
+        <label for="task">Aufgabe:</label>
+        <input type="text" name="task" required>
+        <br>
+        <label for="dueDate">Fälligkeitsdatum:</label>
+        <input type="date" name="datum" required>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+    <!-- Mit dem Button werden die Daten gespeichert -->
+
+    <button type="submit" onclick="addTask ()">Aufgabe hinzufügen</button>
+    </form>
+    <br>
+
+    <?php
+
+    include 'fortschrittsbalken.php';
+
+    ?>
 </body>
 </html>

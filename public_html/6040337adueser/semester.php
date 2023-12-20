@@ -12,7 +12,7 @@ ini_set("display_errors", 1);
     <title> Notizenmanager</title>
 </head>
 
-<?php include "../db_connect.php";
+<?php include "db_connect.php";
 
 if (!empty($_POST)) {
     $sql = "INSERT INTO Semester (Semester) VALUES ('" . $_POST["semester"] . "')";

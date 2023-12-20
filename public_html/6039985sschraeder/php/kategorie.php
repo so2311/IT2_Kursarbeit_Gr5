@@ -6,7 +6,7 @@
 include "dbconnect.php";
 
 if (!empty($_POST)) {
-    $sql = "INSERT INTO Kategorien (Kategorien) VALUES ('" . $_POST["kategorie"] . "')";
+    $sql = "INSERT INTO Kategorien (Kategorie) VALUES ('" . $_POST["kategorie"] . "')";
 
     $db_erg = mysqli_query($con, $sql);
     if (!$db_erg) {
@@ -54,6 +54,9 @@ if (!empty($_POST)) {
 
             <label for="kategorie">Kategorie Name:</label>
             <input type="text" name="kategorie">
+            <div id="notes-container">
+                <button type="submit" class="button">Kategorie speichern</button>
+            </div>
         </div>
 				
 </html>
