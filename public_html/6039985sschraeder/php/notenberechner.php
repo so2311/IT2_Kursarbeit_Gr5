@@ -82,7 +82,21 @@ $db_erg_kategorie = mysqli_query($con, $sql);
     </header>
 
     <nav>
-        Navigation kopieren
+       
+    <?php
+    //Navigation für den Frontend Bereich
+
+     $navigation = ["index.php" => " Start ", 
+				"6039985sschraeder/notenberechner.php" => " Notenberechner ", 
+				"6038479seilers/checkliste.php" => " Checkliste ",
+			  "6040337adueser/notizmanager.php" => " Notizmanager ",
+			  "ergebnisse.php" => " Ergebnisse "];
+        echo "<ul>";
+        foreach ($navigation as $nav => $titel){
+	    echo "<li><a href='$nav' class='titel'>$titel</a></li>";
+        }
+        echo "</ul>"
+    ?>
 
     </nav>
 
@@ -150,9 +164,10 @@ $db_erg_kategorie = mysqli_query($con, $sql);
         <p>Ausgabe Noten</p>
 		
 		<?php
-		  if  (isset($_SESSION['kategorie']) && isset($_SESSION['modul']) && isset($_SESSION['note'])
-			  echo {$_SESSION['kategorie']}, {$_SESSION['modul']}, {$_SESSION['note']}
-		?>
+        if (isset($_SESSION['kategorie']) && isset($_SESSION['modul']) && isset($_SESSION['note'])) {
+        echo $_SESSION['kategorie'] . ", " . $_SESSION['modul'] . ", " . $_SESSION['note'];
+        }
+?>
 		
     </side>
 
