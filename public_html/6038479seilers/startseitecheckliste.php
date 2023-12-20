@@ -16,7 +16,7 @@ if (!$db_erg) {
 
 <!--Tabelle für die Startseite-->
 
-<table>
+<table width="209" height="156">
     <tr>
         <th>Modul</tr>
 	    <th>Kategorie</tr>
@@ -42,7 +42,6 @@ if (!$db_erg) {
 <?php
 
 $sql = "SELECT * FROM Kategorien";
-
 $db_erg_kategorien = mysqli_query($con, $sql);
 
 $sql = "SELECT * FROM Module";

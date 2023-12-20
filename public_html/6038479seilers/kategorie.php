@@ -19,7 +19,7 @@ ini_set("display_errors", 1);
 $can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
 if (!empty($_POST)) {
-    $sql = "INSERT INTO Kategorien (Kategorie) VALUES ('" . $_POST["Kategorie"] . "')";
+    $sql = "INSERT INTO Kategorien (Kategorien) VALUES ('" . $_POST["Kategorien"] . "')";
 
     $db_erg = mysqli_query($can, $sql);
     if (!$db_erg) {
@@ -44,7 +44,7 @@ if (!empty($_POST)) {
             <option value="">Bitte Wählen</option>
             <?php
             while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Modul'] . "</option>";
+                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Module'] . "</option>";
             }
             ?>
         </select>
@@ -56,7 +56,7 @@ if (!empty($_POST)) {
             <option value="">Bitte Wählen</option>
             <?php
             while ($zeile = mysqli_fetch_array($db_erg_kategorie, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorie'] . "</option>";
+                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
 			} 
 			?>
 			

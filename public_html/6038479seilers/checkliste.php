@@ -20,7 +20,7 @@ $can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m122
 
 if (!empty($_POST)) {
     var_dump($_POST);
-    $sql = "INSERT INTO Aufgaben (Modul, Kategorie, Aufgaben, Datum) VALUES ('" . $_POST["Modul"] . "','" . $_POST["Kategorie"] . "', '" . $_POST["Aufgaben"] . "', '" . $_POST["Datum"] . "')";
+    $sql = "INSERT INTO Aufgaben (Module, Kategorien, Aufgaben, Datum) VALUES ('" . $_POST["Module"] . "','" . $_POST["Kategorien"] . "', '" . $_POST["Aufgaben"] . "', '" . $_POST["Datum"] . "')";
 
     $db_erg = mysqli_query($can, $sql);
     if (!$db_erg) {
@@ -28,7 +28,7 @@ if (!empty($_POST)) {
     }
 } else {
 
-	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorie = Kategorie.KategorieID JOIN Module ON Aufgaben.Module = Module.ModuleID ORDER BY AufgabenID DESC LIMIT 10 ";
+	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModuleID ORDER BY AufgabenID DESC LIMIT 10 ";
 
 $db_erg = mysqli_query($can, $sql);
 if (!$db_erg) {
@@ -52,7 +52,7 @@ if (!$db_erg) {
             <option value="">Bitte Wählen</option>
             <?php
             while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Modul'] . "</option>";
+                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Module'] . "</option>";
             }
 	?>
         </select>
@@ -64,9 +64,9 @@ if (!$db_erg) {
             <option value="">Bitte Wählen</option>
 			 <?php
             while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Modul'] . "</option>";
-            }
-			?>
+                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
+             }
+		 ?>
         </select>
         <br>
         <br>
