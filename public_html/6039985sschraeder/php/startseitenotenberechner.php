@@ -13,7 +13,7 @@ if (!$db_erg) {
 ?>
 
 <!--Tabelle für die Startseite-->
-
+<h2>Notenübersicht</h2>
 <table class="table">
     <tr>
         <th>Kategorien</th>
