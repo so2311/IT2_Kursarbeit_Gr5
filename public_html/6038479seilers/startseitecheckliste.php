@@ -14,14 +14,16 @@ if (!$db_erg) {
 
 ?>
 
+<h2>Checkliste</h2>
+
 <!--Tabelle für die Startseite-->
 
-<table width="209" height="156">
+<table class="table">
     <tr>
-        <th>Modul</tr>
-	    <th>Kategorie</tr>
-	    <th>Aufgabe</tr>
-		<th>Durschnitt</th>
+        <th>Modul</th>
+	    <th>Kategorie</th>
+	    <th>Aufgabe</th>
+		<th>Fälligkeitsdatum</th>
 	 
    </tr>
 <?php
