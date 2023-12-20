@@ -144,4 +144,5 @@ $db_erg_modul = mysqli_query($can, $sql);
     </form>
     <br>
 </body>
+	<footer style="color:white">Jade Hochschule; Der Studierendenhelfer von Selina Schräder, Allegra Düser und Sophie Eilers</footer>
 </html>

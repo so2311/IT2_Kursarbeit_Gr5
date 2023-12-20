@@ -14,7 +14,7 @@ if (!$db_erg) {
 
 ?>
 
-<h2>Checkliste</h2>
+<h2>Deine Checkliste</h2>
 
 <!--Tabelle für die Startseite-->
 
