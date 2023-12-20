@@ -6,8 +6,6 @@ ini_set("display_errors", 1);
 $con = mysqli_connect("m12242-39.kurs.jade-hs.de", "m12242-39", "5zvHLEaO_", "m12242-39_2");
 
 
-
-
 if (isset($_POST['ausrechnen'])) {
     $kategorie = $_POST['kategorie'];
     $modul = $_POST['modul'];
@@ -98,7 +96,7 @@ $db_erg_kategorie = mysqli_query($con, $sql);
             Dropdownmenüs aus und klicke auf "Ausrechnen". </p>
         <br>
 
-        <form action="index.php" method="POST">
+        <form action="notenberechner.php" method="POST">
 
             <label for="kategorie">Kategorie:</label>
             <select name="kategorie" required>
@@ -122,23 +120,17 @@ $db_erg_kategorie = mysqli_query($con, $sql);
             </select>
             <br>
 
-            <label for="note">Note:</label>
-            <select name="note" id="note">
-
-                <option value="1.0">1,0</option>
-                <option value="1.3">1,3</option>
-                <option value="1.7">1,7</option>
-                <option value="2.0">2,0</option>
-                <option value="2.3">2,3</option>
-                <option value="2.7">2,7</option>
-                <option value="3.0">3,0</option>
-                <option value="3.3">3,3</option>
-                <option value="3.7">3,7</option>
-                <option value="4.0">4,0</option>
-                <option value="5.0">5,0</option>
+			 <label for="note">Note:</label>
+            <select name="note" required>
+                <option value="">Bitte Wählen</option>
+                <?php
+                while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)) {
+                    echo "<option value=" . $zeile['noteid'] . ">" . $zeile['note'] . "</option>";
+                }
+                ?>
             </select>
             <br>
-            <br>
+			
 
             <!---Bootstrap Button Ausrechnen--->
             <button type="submit" name="ausrechnen" class="btn btn-danger">Ausrechnen</button>
@@ -156,6 +148,12 @@ $db_erg_kategorie = mysqli_query($con, $sql);
 
     <side>
         <p>Ausgabe Noten</p>
+		
+		<?php
+		  if  (isset($_SESSION['kategorie']) && isset($_SESSION['modul']) && isset($_SESSION['note'])
+			  echo {$_SESSION['kategorie']}, {$_SESSION['modul']}, {$_SESSION['note']}
+		?>
+		
     </side>
 
 
