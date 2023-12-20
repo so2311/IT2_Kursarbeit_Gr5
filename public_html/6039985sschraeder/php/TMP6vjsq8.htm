@@ -78,10 +78,9 @@ $db_erg_kategorie = mysqli_query($con, $sql);
 	
 	
 	<header>
-		 <img src="../../bilder/Notenberechner header.png" alt="Header-Bild">
-		<br>
-		<br>
-         <h1>Dein Notenberechner</h1>
+		 <img src=""...\public_html\bilder\Notenberechner header.png"" alt="Header-Bild">
+		
+         <h1>Notenberechner</h1>
     </header>
 
     <nav>
@@ -208,23 +207,6 @@ $sql = "SELECT * FROM Kategorien";
 
 $db_erg_kategorie = mysqli_query($con, $sql);
 
-			
-			
-			// Durchschnitt aller Noten aus allen Modulen
-            $sqlAvg = "SELECT AVG(note) AS avg_value FROM Noten";
-            $resultAvg = mysqli_query($con, $sqlAvg);
-
-            $rowAvg = mysqli_fetch_assoc($resultAvg);
-            if ($rowAvg['avg_value'] !== null) {
-            echo "Notendurchschnitt: " . $rowAvg['avg_value'] . "<br>";
-            } else {
-            echo "Keine Ergebnisse <br>";
-            }
-			
-			
-			
-			
-			
 			?>
 
         <br>
@@ -243,11 +225,11 @@ $db_erg_kategorie = mysqli_query($con, $sql);
     <side>
         <p>Ausgabe Noten</p>
 		
-		<?php
+		<MM:BeginLock translatorClass="MM_PHP_MYSQL" type="transDynDataSession" depFiles="" orig="%3C?php
         if (isset($_SESSION['kategorie']) && isset($_SESSION['modul']) && isset($_SESSION['note'])) {
-        echo $_SESSION['kategorie'] . ", " . $_SESSION['modul'] . ", " . $_SESSION['note'];
+        echo $_SESSION['kategorie'] . %22, %22 . $_SESSION['modul'] . %22, %22 . $_SESSION['note'];
         }
-        ?>
+        ?%3E" ><MM_DYNAMIC_CONTENT SOURCE=Session BINDING="kategorie" DYNAMICDATA=1><MM:DECORATION HILITECOLOR="Dyn Untranslated Color">{Session.kategorie}</MM:DECORATION></MM_DYNAMIC_CONTENT><MM:EndLock>
     </side>
 
 
