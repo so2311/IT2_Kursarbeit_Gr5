@@ -1,6 +1,7 @@
-
 <?php
-
+ error_reporting(E_ALL);
+ ini_set("display_errors", 1);
+	
 //JOIN für Fremdschlüssel fk_modul und fk_kategorie und die letzten 10 Beiträge mit DESC LIMIT 10
 $sql = "SELECT * FROM 
 Noten JOIN Kategorie ON Noten.Kategorie = Kategorie.
