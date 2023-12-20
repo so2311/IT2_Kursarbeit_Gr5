@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Gridlayout */
+.container{
+	display:grid;
+    grid-template-columns:16rem 1 fr 16rem;
+    grid-template-rows:auto 1 fr auto;
+	grid-template-areas:
+		"header header header"
+		"nav main main"
+		"footer footer footer";
+grid-gap:10px;
+min-height:100vh;}
+
+header{
+	grid-area:header;
+	padding: 2rem;
+	background-color: lightgray;}
+
+header img {
+            width: 100%; 
+            max-height: 300px; 
+            object-fit: cover; }
+
+nav{
+	grid-area:nav;
+    padding: 2rem;
+    background-color: dimgrey;}
+
+
+main {
+	grid-area:main;
+	padding: 2rem;
+    background-color: lightgrey;}
+
+
+footer{
+	grid-area:footer;
+    padding: 2rem;
+    background-color: red;}
+       
+
+
+/* Überschrift */
+h1 {
+  color: black;
+  text-align: center;
+}
+
+/* Text */
+p {
+  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+  font-size: 20px;
+}
+
+
+
+/* Dropdown Menüs*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
