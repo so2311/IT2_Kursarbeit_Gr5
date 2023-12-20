@@ -5,7 +5,7 @@
 $con= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 	
 //JOIN für Fremdschlüssel fk_modul und fk_kategorie und die letzten 10 Beiträge mit DESC LIMIT 10
-$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModulID ORDER BY AufgabenID DESC LIMIT 10 ";
+$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModulID ORDER BY AufgabeID DESC LIMIT 10 ";
 
 $db_erg = mysqli_query($con, $sql);
 if (!$db_erg) {
@@ -45,5 +45,5 @@ $sql = "SELECT * FROM Kategorien";
 $db_erg_kategorien = mysqli_query($con, $sql);
 
 $sql = "SELECT * FROM Module";
-$db_erg_modul = mysqli_query($con, $sql);
+$db_erg_module = mysqli_query($con, $sql);
 ?>

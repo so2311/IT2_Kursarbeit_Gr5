@@ -16,7 +16,8 @@ ini_set("display_errors", 1);
 </head>
 
 	<?php
-$con= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
+	
+	$con= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
 if (!empty($_POST)) {
     var_dump($_POST);
@@ -26,14 +27,16 @@ if (!empty($_POST)) {
     if (!$db_erg) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
-} else {
+} 
+	else {
 
-	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModuleID ORDER BY AufgabenID DESC LIMIT 10 ";
+	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModulID ORDER BY AufgabeID DESC LIMIT 10 ";
 
 $db_erg = mysqli_query($con, $sql);
 if (!$db_erg) {
     die('Ungültige Abfrage: ' . mysqli_error());
 }
+	
 ?>
 
 <body>

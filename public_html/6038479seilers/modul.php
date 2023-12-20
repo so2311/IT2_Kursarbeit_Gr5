@@ -14,14 +14,15 @@ ini_set("display_errors", 1);
     <link rel="stylesheet" href="css/checkliste.css">
     <script src="checkliste.js"></script>
 </head>
-
-	<?php
-$can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
+	
+	<?php 
+	
+	$con= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
 if (!empty($_POST)) {
     $sql = "INSERT INTO Module (Module) VALUES ('" . $_POST["Module"] . "')";
 
-    $db_erg = mysqli_query($can, $sql);
+    $db_erg = mysqli_query($con, $sql);
     if (!$db_erg) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
@@ -29,7 +30,7 @@ if (!empty($_POST)) {
 ?>
 
 <body>
-<h1 style="color: black;">Deine Checklisten</h1>
+<h1 style="color: black;">Modul angeben</h1>
 <p></p>
 <p></p>
 
@@ -40,46 +41,11 @@ if (!empty($_POST)) {
     <div class="container1">
         <!-- Der Name der Checkliste wird eingegeben, bzw. das Modul, für das man eine Checkliste anlegen möchte -->
         <label for="listname">Modul:</label>
-        <select name="modul" required>
-            <option value="">Bitte Wählen</option>
-            <?php
-            while ($zeile = mysqli_fetch_array($db_erg_modul, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['ModulID'] . ">" . $zeile['Module'] . "</option>";
-            }
-            ?>
-        </select>
+        <input type="text" name="Module">
+          
         <br>
         <br>
-        <!-- Die Kategorie wird eingegeben, bzw. die vier Säulen des Studiengangs -->
-        <label for="kategorie">Kategorie:</label>
-        <select name="kategorie" required>
-            <option value="">Bitte Wählen</option>
-            <?php
-            while ($zeile = mysqli_fetch_array($db_erg_kategorie, MYSQLI_ASSOC)) {
-                echo "<option value=" . $zeile['KategorieID'] . ">" . $zeile['Kategorien'] . "</option>";
-			} 
-			?>
-			
-        </select>
-        <br>
-        <br>
-		
-        <!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
-
-        <label for="task">Aufgabe:</label>
-        <input type="text" name="task" required>
-        <br>
-        <label for="dueDate">Fälligkeitsdatum:</label>
-        <input type="date" name="datum" required>
-        <br>
-        <br>
-    </div>
-    <br>
-    <br>
-
-    <!-- Mit dem Button werden die Daten gespeichert -->
-
-    <button type="submit" onclick="addTask ()">Aufgabe hinzufügen</button>
+	</div>
     </form>
     <br>
 </body>
