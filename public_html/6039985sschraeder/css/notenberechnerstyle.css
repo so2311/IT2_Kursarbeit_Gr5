@@ -19,7 +19,11 @@ main {
 	padding: 2rem;
     background-color: lightgrey;}
 
-       
+footer {
+	grid-area:main;
+	padding: 2rem;
+    background-color: red;}
+
 /* Überschrift */
 h1 {
   color: black;

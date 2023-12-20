@@ -55,4 +55,5 @@ if (!empty($_POST)) {
             </div>
         </div>
 				
+		<footer style="color:white">Jade Hochschule; Der Studierendenhelfer von Selina Schräder, Allegra Düser und Sophie Eilers</footer>
 </html>

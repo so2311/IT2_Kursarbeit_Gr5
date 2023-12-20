@@ -52,5 +52,6 @@ if (!empty($_POST)) {
                 <button type="submit" class="button">Kategorie speichern</button>
             </div>
         </div>
-				
+			
+		<footer style="color:white">Jade Hochschule; Der Studierendenhelfer von Selina Schräder, Allegra Düser und Sophie Eilers</footer>		
 </html>
