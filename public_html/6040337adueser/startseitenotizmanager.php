@@ -1,8 +1,4 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-?>
-<?php include "db_connect.php";
+<?php include "db_connect.php"; // Einbindung der Datenbank
 	
 // Fremdschlüssel und anzeigen der letzten 10 Einträge mit Limit
 $sql = "SELECT * FROM Notizen JOIN Kategorie ON Notizen.Kategorie = Kategorie.KategorieID JOIN Semester ON Notizen.Semester = Semester.SemesterID ORDER BY NotizenID DESC LIMIT 10 ";
@@ -11,8 +7,8 @@ $db_erg = mysqli_query($can, $sql);
 if (!$db_erg) {
     die('Ungültige Abfrage: ' . mysqli_error());
 }
-
-
+ 
+// Tabelle Startseite 
 ?>
 <h2>Notizenmanager</h2>
     <table class="table">

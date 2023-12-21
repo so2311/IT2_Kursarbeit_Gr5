@@ -1,8 +1,5 @@
 <?php
-error_reporting(E_ALL);
- ini_set("display_errors", 1);
-
-
+// Einbindung der Datenbank
 include "db_connect.php";
 
 
@@ -18,7 +15,7 @@ if ($num > 0) {
 } else {
     echo "Keine Ergebnisse <br>";
 }
-
+// Anzahl der Datensätze je Kategorie
 $sqlCount = "SELECT * FROM Kategorie";
 $resultSelect = mysqli_query($can, $sqlCount);
 

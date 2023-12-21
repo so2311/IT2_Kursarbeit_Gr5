@@ -1,7 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +9,7 @@ ini_set("display_errors", 1);
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title> Notizenmanager</title>
 </head>
-
+<!-- Datenbankverbindung -->
 <?php include "db_connect.php";
 
 if (!empty($_POST)) {
@@ -25,6 +21,7 @@ if (!empty($_POST)) {
     }
 }
 ?>
+	<!-- Navigationsleiste -->
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>

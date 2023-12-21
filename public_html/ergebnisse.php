@@ -1,7 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-?>
 <!doctype html>
 <html>
 <head>
@@ -17,6 +13,7 @@ ini_set("display_errors", 1);
 
 	  </header>
 <body>
+<!-- Navigationsleiste -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,6 +70,7 @@ ini_set("display_errors", 1);
 	
 
 	<main>
+<!-- Statistiken -->
 <h2>Deine Ergebnisse aus dem Notenberechner</h2>
 
 	<?php
