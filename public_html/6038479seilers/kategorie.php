@@ -91,7 +91,7 @@ if (!empty($_POST)) {
 
 <form action="checkliste.php" method="post">
 
-    <!-- Class=conatainer wurde verwendet, um die drei Checklisten zu ordnen und angemessen darstellen zu können -->
+<!-- Class=container wurde verwendet, um die Checkliste als Block ordnen und angemessen darstellen zu können -->
 
     <div class="container1">
 		

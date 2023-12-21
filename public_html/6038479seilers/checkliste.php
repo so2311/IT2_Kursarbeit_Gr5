@@ -19,8 +19,11 @@ ini_set("display_errors", 1);
 
 
 <?php
+	
+	//Verbindung zur Datenbank
 $can= mysqli_connect("m12242-08.kurs.jade-hs.de", "m12242-08", "cwAH6n59E","m12242-08_2");
 
+	//Speicherung der Werte in die Tabelle "Aufgaben"
 if (!empty($_POST)) {
     var_dump($_POST);
     $sql = "INSERT INTO Aufgaben (Module, Kategorien, Aufgaben, Datum) VALUES ('" . $_POST["Module"] . "','" . $_POST["Kategorien"] . "', '" . $_POST["Aufgaben"] . "', '" . $_POST["Datum"] . "')";
@@ -30,6 +33,7 @@ if (!empty($_POST)) {
         die('Ungültige Abfrage: ' . mysqli_error());
     }
 } 
+	//Fremdschlüsselverbindung
 	else {
 	
 	$sql = "SELECT * FROM Aufgaben JOIN Kategorien ON Aufgaben.Kategorien = Kategorien.KategorieID JOIN Module ON Aufgaben.Module = Module.ModulID ORDER BY AufgabeID DESC LIMIT 10 ";
@@ -46,6 +50,7 @@ $db_erg_modul = mysqli_query($can, $sql);
 ?>
 <main>
 <body>
+	<!-- Navigationsleiste -->
 	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,7 +129,7 @@ $db_erg_modul = mysqli_query($can, $sql);
         </select>
         <br>
         <br>
-        <!-- Insgesamt können pro Checkliste vier fällige Aufgaben eingegeben werden und das zugehörige Fälligkeitsdatum wird ausgewählt -->
+        <!-- Die Aufgabe kann eingegeben und ein dazugehöriges Fälligkeitsdatum kann ausgewählt werden -->
 
         <label style="color: white;" for="Aufgaben">Aufgabe:</label>
         <input type="text" name="Aufgaben" required>

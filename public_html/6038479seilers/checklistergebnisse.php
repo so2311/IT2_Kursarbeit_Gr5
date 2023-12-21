@@ -12,6 +12,7 @@ $rowCount = mysqli_fetch_assoc($resultCount);
 
 $num = $rowCount['num'];
 
+//Angabe, wie viele Aufgaben an welchen Daten fällig sind
 if ($num > 0) {
     echo "Anzahl eingetragener Aufgaben: $num <br>";
 } else {
