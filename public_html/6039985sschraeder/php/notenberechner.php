@@ -69,13 +69,13 @@ $db_erg_kategorie = mysqli_query($con, $sql);
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item"><a class="nav-link" href="../index.php">Startseite</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="../6039985sschraeder/php/notenberechner.php" id="notenDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="../../6039985sschraeder/php/notenberechner.php" id="notenDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					  Notenberechner
                 </a>
                 <div class="dropdown-menu" aria-labelledby="notenDropdown">
-                    <a class="dropdown-item" href="../6039985sschraeder/php/notenberechner.php">Notenrechner</a>
-                    <a class="dropdown-item" href="../6039985sschraeder/php/kategorie.php">Kategorie</a>
-                    <a class="dropdown-item" href="../6039985sschraeder/php/modul.php">Modul</a>
+                    <a class="dropdown-item" href="../../6039985sschraeder/php/notenberechner.php">Notenrechner</a>
+                    <a class="dropdown-item" href="../../6039985sschraeder/php/kategorie.php">Kategorie</a>
+                    <a class="dropdown-item" href="../../6039985sschraeder/php/modul.php">Modul</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
