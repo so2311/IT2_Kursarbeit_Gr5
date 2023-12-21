@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
+	 <link rel="stylesheet" href="../public_html/6040337adueser/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+	<!-- Navigationsleiste -->
 <body class="Startseite">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Studierendenhelfer</a>
@@ -54,24 +56,24 @@
 <div class="container">
 
     <header class="header">
-        <!-- Replace with your header image -->
+        <!-- Startseitenbild -->
         <img src="bilder/Startseite%20header.png" alt="Header" class="img-fluid center-header">
     </header>
-    <!-- Content here -->
+    <!-- include dateien -->
     <h1>Der Studierendenhelfer</h1>
     <?php
 
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
 
     include "6039985sschraeder/php/startseitenotenberechner.php";
     include "6038479seilers/startseitecheckliste.php";
     include "6040337adueser/startseitenotizmanager.php";
 
     ?>
+	<!-- Bootstrap tabellen css --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </div>
 </body>
+	<footer style="color:white">Jade Hochschule; Der Studierendenhelfer von Selina Schräder, Allegra Düser und Sophie Eilers</footer>
 </html>

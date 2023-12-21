@@ -116,7 +116,7 @@ function updateCourses() {
                                      '<option value="studienabschlussvorbereitung">Studienabschlussvorbereitung</option>';
         } else if (selectedCategory === 'Wirtschaft') {
             // Kurse für Semester 7, Wirtschaft
-            courseSelect.innerHTML = '<option value="schwerpunkt-2-wirtschaft">Schwerpunkt 2 Wirtschaft</option>'
+            courseSelect.innerHTML = '<option value="schwerpunkt-2-wirtschaft">Schwerpunkt 2 Wirtschaft</option>'+
 									 '<option value="medienrecht">Medienrecht</option>';
         }
 

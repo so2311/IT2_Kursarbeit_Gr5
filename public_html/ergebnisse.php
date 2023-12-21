@@ -83,7 +83,6 @@ ini_set("display_errors", 1);
 <br>	
 	
 <h2>Deine Ergebnisse aus den Checklisten</h2>
-<p> Anzahl der Checklisten</p>
 <?php
         include "6038479seilers/checklistergebnisse.php";
 
@@ -97,7 +96,7 @@ ini_set("display_errors", 1);
 
 	
 <h2>Deine Ergebnisse aus dem Notizenmanager:</h2>
-<p>Anzahl der Notizen</p>
+
         <?php
         include "6040337adueser/ergebnissenotizmanager.php";
 
