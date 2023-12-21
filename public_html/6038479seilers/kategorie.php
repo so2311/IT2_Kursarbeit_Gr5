@@ -82,7 +82,7 @@ if (!empty($_POST)) {
 <div class="container">
 
     <header>
-<h1 style="color: black;">Modul angeben</h1>
+<h1 style="color: black;">Kategorie angeben</h1>
 			</header>
 <p></p>
 <p></p>
